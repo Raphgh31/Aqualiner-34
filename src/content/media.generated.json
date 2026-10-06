@@ -1,0 +1,995 @@
+{
+ "croix-occitane": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#4f616a",
+  "widths": [
+   640,
+   1024,
+   1600,
+   2400
+  ],
+  "alt": "Bassin rectangulaire en membrane anthracite, une grande croix occitane claire soudée au fond ; margelles en pierre claire, gazon d'un côté, gravier blanc et plantes de l'autre.",
+  "date": "2018-07-31",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "croix-occitane-portrait": {
+  "w": 1734,
+  "h": 2268,
+  "color": "#2f536c",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "La croix occitane soudée au fond du bassin, vue plongeante sur la membrane anthracite.",
+  "date": "2018-07-31",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "croix-occitane-escalier": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#4b585f",
+  "widths": [
+   640,
+   1024,
+   1600,
+   2400
+  ],
+  "alt": "Le même bassin vu depuis l'angle de l'escalier : banquette immergée et marches habillées de membrane, eau sombre et margelles claires.",
+  "date": "2018-07-31",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "gecko-tonneaux": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#6a7379",
+  "widths": [
+   640,
+   1024,
+   1600,
+   2400
+  ],
+  "alt": "Terrasse avec tonneaux et lame d'eau ; dans le bassin à membrane sombre, une banquette imprimée bois et un gecko clair au fond.",
+  "date": "2022-04-08",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "gecko-tonneaux-eau": {
+  "w": 3629,
+  "h": 1588,
+  "color": "#637b89",
+  "widths": [
+   640,
+   1024,
+   1600,
+   2400
+  ],
+  "alt": "La banquette imprimée bois et le gecko vus à travers l'eau, sous la lame d'eau.",
+  "date": "2022-04-08",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "gecko-tonneaux-nuit": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#4d207e",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Le même bassin de nuit : éclairage coloré, lame d'eau illuminée et reflets sur la terrasse.",
+  "date": "2022-03-20",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "chateau-ancien": {
+  "w": 750,
+  "h": 500,
+  "color": "#6e6c67",
+  "widths": [
+   640
+  ],
+  "alt": "L'ancien bassin avant travaux : revêtement bleu pâle décoloré et taché, dallage autour.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "chateau-avant": {
+  "w": 750,
+  "h": 500,
+  "color": "#889189",
+  "widths": [
+   640
+  ],
+  "alt": "Le bassin vidé, l'ancien revêtement à nu ; derrière la clôture, les tours du château.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "chateau-membrane": {
+  "w": 750,
+  "h": 500,
+  "color": "#828d98",
+  "widths": [
+   640
+  ],
+  "alt": "La membrane armée bleu foncé posée sur le fond et les parois, avant la mise en eau.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "chateau-pose": {
+  "w": 750,
+  "h": 500,
+  "color": "#686f6d",
+  "widths": [
+   640
+  ],
+  "alt": "La membrane posée, vue sous le même angle que le bassin vidé, château en arrière-plan.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "chateau-apres": {
+  "w": 750,
+  "h": 500,
+  "color": "#607267",
+  "widths": [
+   640
+  ],
+  "alt": "Le bassin rénové et rempli, membrane bleu foncé ; au-dessus des arbres, une tour du château.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "angle-avant": {
+  "w": 750,
+  "h": 500,
+  "color": "#7991a7",
+  "widths": [
+   640
+  ],
+  "alt": "Avant : l'escalier d'angle en mosaïque, ancien revêtement délavé.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "angle-vide": {
+  "w": 750,
+  "h": 500,
+  "color": "#787f7f",
+  "widths": [
+   640
+  ],
+  "alt": "Le bassin vidé et nettoyé avant la pose, un tonneau posé sur la margelle.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "angle-pose": {
+  "w": 750,
+  "h": 500,
+  "color": "#848b8f",
+  "widths": [
+   640
+  ],
+  "alt": "Pendant la pose : les premiers lés de membrane gris clair sur les parois.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "angle-escalier": {
+  "w": 750,
+  "h": 500,
+  "color": "#6c93a4",
+  "widths": [
+   640
+  ],
+  "alt": "L'escalier d'angle habillé de membrane, sous l'eau.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "angle-apres": {
+  "w": 750,
+  "h": 500,
+  "color": "#79939c",
+  "widths": [
+   640
+  ],
+  "alt": "Après : le bassin en forme libre rempli, membrane gris-bleu, un jet de refoulement en marche.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "angle-reflets": {
+  "w": 750,
+  "h": 500,
+  "color": "#608398",
+  "widths": [
+   640
+  ],
+  "alt": "Reflets du soleil sur la membrane du bassin rénové.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "angle-fontaine": {
+  "w": 750,
+  "h": 500,
+  "color": "#476a73",
+  "widths": [
+   640
+  ],
+  "alt": "Fontaine en forme de dauphin et demi-tonneau au bord du bassin rénové.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "couloir": {
+  "w": 3790,
+  "h": 1814,
+  "color": "#5a6644",
+  "widths": [
+   640,
+   1024,
+   1600,
+   2400
+  ],
+  "alt": "Long bassin étroit au ras d'une pelouse, membrane claire, olivier taillé et haie de végétation méditerranéenne.",
+  "date": "2018-06-28",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "couloir-plage": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#507d8f",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Les marches en largeur à l'extrémité du couloir de nage, eau turquoise sur membrane claire.",
+  "date": "2018-06-28",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "roman": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#6b798b",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Escalier roman en demi-cercle habillé de membrane bleu foncé, margelles couleur sable.",
+  "date": "2018-06-27",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "roman-bassin": {
+  "w": 3468,
+  "h": 1633,
+  "color": "#5a6a6d",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Le bassin aux bouts arrondis vu de côté, escalier roman à gauche, reflets des arbres.",
+  "date": "2018-06-27",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "nocturne": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#282d35",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Le bassin de nuit : éclairage bleu, jets d'eau et ruban lumineux le long de la margelle.",
+  "date": "2018-04-15",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "nocturne-jour": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#5d6062",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Le même bassin de jour : membrane sombre, bordure noire, jets en marche.",
+  "date": "2018-04-15",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "bleu": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#5c7d93",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Membrane bleu foncé, un motif clair au fond et une échelle inox.",
+  "date": "2018-06-04",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "bleu-escalier": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#647c92",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Escalier roman immergé dans un bassin à membrane bleue, margelles claires.",
+  "date": "2018-06-04",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "nuit-turquoise": {
+  "w": 1600,
+  "h": 777,
+  "color": "#344440",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Bassin aux courbes libres éclairé de nuit, escalier immergé, palmiers, cycas et oranger, gravier blanc.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "soudure": {
+  "w": 4608,
+  "h": 2307,
+  "color": "#67666a",
+  "widths": [
+   640,
+   1024,
+   1600,
+   2400
+  ],
+  "alt": "Un poseur soude à l'air chaud la membrane ardoise sur le haut d'une paroi, un rouleau presseur à la main ; en bas, un motif gecko déjà en place.",
+  "date": "2021-03-29",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "soudure-mains": {
+  "w": 2857,
+  "h": 2307,
+  "color": "#696668",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Les mains du poseur : la buse du pistolet à air chaud et le rouleau presseur sur la membrane.",
+  "date": "2021-03-29",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "gecko-paroi": {
+  "w": 2427,
+  "h": 1688,
+  "color": "#6b6f75",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Gecko tribal découpé dans une membrane blanche marbrée et soudé sur une paroi en membrane ardoise, bassin encore vide.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "local-technique": {
+  "w": 1600,
+  "h": 900,
+  "color": "#767878",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Local technique : filtre à sable, pompe, électrolyseur et vannes raccordés.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "skimmer": {
+  "w": 750,
+  "h": 500,
+  "color": "#918e8a",
+  "widths": [
+   640
+  ],
+  "alt": "Un skimmer neuf posé dans sa tranchée, avant le remblai.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "escalier-beton": {
+  "w": 750,
+  "h": 500,
+  "color": "#928d85",
+  "widths": [
+   640
+  ],
+  "alt": "Un escalier d'angle en béton brut, avant la pose de la membrane.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "escalier-membrane": {
+  "w": 750,
+  "h": 500,
+  "color": "#919294",
+  "widths": [
+   640
+  ],
+  "alt": "Un escalier d'angle habillé de membrane gris clair, angles et nez de marche soudés.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "motif-croix-noire": {
+  "w": 750,
+  "h": 500,
+  "color": "#4d4c4d",
+  "widths": [
+   640
+  ],
+  "alt": "Croix occitane blanche soudée sur une membrane noire, sous l'eau et ses reflets.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "motif-poisson": {
+  "w": 750,
+  "h": 500,
+  "color": "#5381ac",
+  "widths": [
+   640
+  ],
+  "alt": "Poisson stylisé en membrane claire soudé sur un fond bleu.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "motif-croix-bleue": {
+  "w": 750,
+  "h": 500,
+  "color": "#5396b9",
+  "widths": [
+   640
+  ],
+  "alt": "Croix occitane bleu soutenu sur une membrane bleu clair, bassin vide avant la mise en eau.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "motif-croix-blanche": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#66879c",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Croix occitane blanche au fond d’un bassin à membrane bleue, escalier roman.",
+  "date": "2018-06-30",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "motif-gecko-fond": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#686b6b",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Bassin à bordure de carrelage sombre, un gecko soudé au fond, terrasse et pergola.",
+  "date": "2018-07-13",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "motif-lion": {
+  "w": 5906,
+  "h": 5906,
+  "color": "#a5a7a6",
+  "widths": [
+   480,
+   960
+  ],
+  "alt": "Dessin noir d’une tête de lion tribale, préparé pour être découpé dans la membrane.",
+  "date": null,
+  "origin": "Dessin de motif « lion tribal » (2016), publié sur aqualiner34.fr"
+ },
+ "carnet-lagon": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#6c796d",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Bassin à l'eau turquoise sur membrane claire, dallage en pierre irrégulière et pelouse.",
+  "date": "2018-08-02",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-lagon-2": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#568d92",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Le même bassin vu de près : angle rentrant, marches et eau claire.",
+  "date": "2018-08-02",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-sureleve": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#4c4b3f",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Bassin surélevé à bords droits, membrane bleu-vert, végétation et pots fleuris au premier plan.",
+  "date": "2018-07-24",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-long": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#518489",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Long bassin rectangulaire, eau bleu vif, margelles et bains de soleil blancs.",
+  "date": "2018-07-23",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-banquette": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#48677d",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Banquette et marches immergées, membrane grise, robot nettoyeur au fond.",
+  "date": "2018-07-24",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-banquette-2": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#5e707b",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Le même bassin vu dans sa longueur, plage immergée le long de la margelle.",
+  "date": "2018-07-24",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-terrasse-bois": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#7c7e7c",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Bassin rectangulaire à membrane sombre et bordure ardoise, terrasse en bois et plantes.",
+  "date": "2018-06-30",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-marches": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#748685",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Marches d'angle immergées, membrane claire, eau très transparente.",
+  "date": "2018-06-27",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-matelas": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#528281",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Bassin bleu vif, matelas gonflable et frite de piscine, margelles claires.",
+  "date": "2018-06-27",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-plage": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#698282",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Plage immergée en angle, ombre des arbres sur l’eau claire.",
+  "date": "2018-06-27",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-rampe": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#4f6d86",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Bassin bleu vu depuis la plage, rampe inox et dallage terre cuite.",
+  "date": "2018-06-08",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-escalier-droit": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#5e7d94",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Escalier droit habillé de membrane, skimmer et margelles en pierre.",
+  "date": "2018-05-11",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-tomettes": {
+  "w": 4032,
+  "h": 2268,
+  "color": "#6a7d79",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Bassin rectangulaire bordé de tomettes, eau turquoise, pergola et végétation.",
+  "date": "2018-04-09",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-bois-clair": {
+  "w": 1600,
+  "h": 900,
+  "color": "#6b8189",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Bassin à membrane claire, large marche immergée, terrasse en lames imitation bois.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-margelles-grises": {
+  "w": 1600,
+  "h": 1200,
+  "color": "#74969e",
+  "widths": [
+   640,
+   1024,
+   1600
+  ],
+  "alt": "Bassin à membrane claire, margelles grises et escalier droit dans la longueur.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-pinede": {
+  "w": 941,
+  "h": 706,
+  "color": "#6f776e",
+  "widths": [
+   640
+  ],
+  "alt": "Bassin turquoise entouré d’une terrasse en bois, pinède et canisses en arrière-plan.",
+  "date": "2018-05-16",
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-mer": {
+  "w": 750,
+  "h": 500,
+  "color": "#739494",
+  "widths": [
+   640
+  ],
+  "alt": "Bassin turquoise entre deux palmiers, au-dessus d’une plage et de la mer.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-abri": {
+  "w": 750,
+  "h": 500,
+  "color": "#7da39d",
+  "widths": [
+   640
+  ],
+  "alt": "Bassin sous abri vitré, membrane claire, dallage en pierre.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-residence": {
+  "w": 750,
+  "h": 500,
+  "color": "#66797e",
+  "widths": [
+   640
+  ],
+  "alt": "Grand bassin collectif bordé de transats bleus, en bord de jardin.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-haricot": {
+  "w": 750,
+  "h": 500,
+  "color": "#6b959f",
+  "widths": [
+   640
+  ],
+  "alt": "Bassin en forme de haricot, eau claire et margelles en pierre.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-palmier": {
+  "w": 750,
+  "h": 500,
+  "color": "#69746f",
+  "widths": [
+   640
+  ],
+  "alt": "Bassin en forme libre sous les palmiers, dallage en pierre irrégulière.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-banquette-sombre": {
+  "w": 750,
+  "h": 500,
+  "color": "#7ba1af",
+  "widths": [
+   640
+  ],
+  "alt": "Membrane gris foncé, banquette et marches en angle, margelles blanches.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-transats": {
+  "w": 750,
+  "h": 500,
+  "color": "#9c968b",
+  "widths": [
+   640
+  ],
+  "alt": "Bassin rectangulaire, transats orange et façade ocre.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-colonnes": {
+  "w": 750,
+  "h": 500,
+  "color": "#567883",
+  "widths": [
+   640
+  ],
+  "alt": "Bassin aux eaux très claires devant une maison à colonnes.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "carnet-chantier": {
+  "w": 750,
+  "h": 500,
+  "color": "#8c8783",
+  "widths": [
+   640
+  ],
+  "alt": "Grand bassin vidé en cours de rénovation, escalier en largeur.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "texture-ardoise": {
+  "w": 1422,
+  "h": 1568,
+  "color": "#313841",
+  "widths": [
+   480,
+   960
+  ],
+  "alt": "Membrane 3D Touch aspect ardoise, gris-bleu veiné, à sec.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "texture-ardoise-eau": {
+  "w": 640,
+  "h": 1838,
+  "color": "#2c435d",
+  "widths": [
+   480,
+   640
+  ],
+  "alt": "Membrane aspect ardoise sous l'eau : bleu profond et reflets.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "texture-sable": {
+  "w": 1422,
+  "h": 1568,
+  "color": "#c2afa1",
+  "widths": [
+   480,
+   960
+  ],
+  "alt": "Membrane 3D Touch aspect sable, beige grainé, à sec.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "texture-sable-eau": {
+  "w": 640,
+  "h": 1838,
+  "color": "#9a8c75",
+  "widths": [
+   480,
+   640
+  ],
+  "alt": "Membrane aspect sable sous l'eau : eau claire et dorée.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "texture-pierre": {
+  "w": 1422,
+  "h": 1568,
+  "color": "#9a7e6b",
+  "widths": [
+   480,
+   960
+  ],
+  "alt": "Membrane 3D Touch aspect pierre, ocre et brun nuancés, à sec.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "texture-pierre-eau": {
+  "w": 640,
+  "h": 1838,
+  "color": "#6a7c6a",
+  "widths": [
+   480,
+   640
+  ],
+  "alt": "Membrane aspect pierre sous l'eau : vert et ocre mêlés.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "texture-pierre-jaune": {
+  "w": 1422,
+  "h": 1568,
+  "color": "#d5b89b",
+  "widths": [
+   480,
+   960
+  ],
+  "alt": "Membrane 3D Touch aspect pierre jaune, grain clair, à sec.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "texture-pierre-jaune-eau": {
+  "w": 640,
+  "h": 1838,
+  "color": "#79957d",
+  "widths": [
+   480,
+   640
+  ],
+  "alt": "Membrane aspect pierre jaune sous l'eau : vert d'eau lumineux.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "texture-beton-gris": {
+  "w": 1422,
+  "h": 1568,
+  "color": "#76787e",
+  "widths": [
+   480,
+   960
+  ],
+  "alt": "Membrane 3D Touch aspect béton gris, texture minérale, à sec.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "texture-beton-gris-eau": {
+  "w": 640,
+  "h": 1838,
+  "color": "#999d9f",
+  "widths": [
+   480,
+   640
+  ],
+  "alt": "Membrane aspect béton gris sous l'eau : gris perle et reflets.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "texture-marbre-blanc": {
+  "w": 1422,
+  "h": 1568,
+  "color": "#edecec",
+  "widths": [
+   480,
+   960
+  ],
+  "alt": "Membrane 3D Touch aspect marbre blanc, veines fines, à sec.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "texture-marbre-blanc-eau": {
+  "w": 640,
+  "h": 1838,
+  "color": "#a4b8b6",
+  "widths": [
+   480,
+   640
+  ],
+  "alt": "Membrane aspect marbre blanc sous l'eau : bleu très pâle.",
+  "date": null,
+  "origin": "Scan du nuancier Renolit Alkorplan Touch, publié sur aqualiner34.fr (recadré)"
+ },
+ "equipe-jean-philippe": {
+  "w": 120,
+  "h": 150,
+  "color": "#757691",
+  "widths": [
+   120
+  ],
+  "alt": "Portrait de Jean-Philippe Pagnon.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "equipe-wladimir": {
+  "w": 120,
+  "h": 150,
+  "color": "#858da3",
+  "widths": [
+   120
+  ],
+  "alt": "Portrait de Wladimir Dubreuil.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "equipe-daniel": {
+  "w": 120,
+  "h": 150,
+  "color": "#6385b9",
+  "widths": [
+   120
+  ],
+  "alt": "Portrait de Daniel, dirigeant technique.",
+  "date": null,
+  "origin": "Photographie de chantier Aqualiner 34, publiée sur aqualiner34.fr"
+ },
+ "presse-2017": {
+  "w": 920,
+  "h": 641,
+  "color": "#d4d2cc",
+  "widths": [
+   640
+  ],
+  "alt": "Double page du magazine L'Activité Piscine de septembre 2017 : article « Aqua Liner 34, rénovations et constructions ».",
+  "date": "2017-09-01",
+  "origin": "Page du magazine L'Activité Piscine n° 105 (septembre 2017), publiée sur aqualiner34.fr"
+ },
+ "label-pro-piscine": {
+  "w": 500,
+  "h": 467,
+  "color": "#aecbdf",
+  "widths": [
+   500
+  ],
+  "alt": "Badge Propiscines, Fédération des professionnels de la piscine, entreprise engagée 2014.",
+  "date": null,
+  "origin": "Badge Pro Piscine (Fédération des professionnels de la piscine), publié sur aqualiner34.fr"
+ }
+}
