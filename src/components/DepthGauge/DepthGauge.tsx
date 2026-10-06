@@ -1,0 +1,67 @@
+import { useMotionValueEvent, useScroll } from 'motion/react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router'
+import { formatDepth } from '../../lib/depth'
+import styles from './DepthGauge.module.css'
+
+/** Profondeur atteinte en bas de page, en mètres. */
+const MAX_DEPTH = 2.2
+const TICKS = Array.from({ length: Math.round(MAX_DEPTH * 10) + 1 }, (_, i) => i / 10)
+
+/**
+ * Jauge de profondeur : le défilement de la page se lit en mètres, de la surface au fond.
+ * Rouge près de la surface, turquoise au-dessus des sections profondes (le rouge disparaît sous l'eau).
+ */
+export default function DepthGauge() {
+  const { scrollYProgress } = useScroll()
+  const [depth, setDepth] = useState(0)
+  const [deep, setDeep] = useState(false)
+  const marker = useRef<HTMLDivElement>(null)
+  const { pathname } = useLocation()
+
+  // La jauge lit la section qui passe derrière son repère.
+  const readGround = useCallback(() => {
+    const box = marker.current?.getBoundingClientRect()
+    if (!box) return
+    const under = document.elementFromPoint(box.right + 24, box.top + box.height / 2)
+    setDeep(Boolean(under?.closest('.profond, .ardoise, [data-sombre]')))
+  }, [])
+
+  useMotionValueEvent(scrollYProgress, 'change', (progress) => {
+    setDepth(progress * MAX_DEPTH)
+    readGround()
+  })
+
+  useEffect(() => {
+    // Après le changement de page (et la fin du rideau), relire le fond.
+    const timer = window.setTimeout(readGround, 900)
+    readGround()
+    window.addEventListener('resize', readGround)
+    return () => {
+      window.clearTimeout(timer)
+      window.removeEventListener('resize', readGround)
+    }
+  }, [pathname, readGround])
+
+  return (
+    <div className={styles.jauge} data-profond={deep || undefined} aria-hidden="true">
+      <div className={styles.echelle}>
+        {TICKS.map((tick) => {
+          const major = Math.round(tick * 10) % 5 === 0
+          return (
+            <span
+              key={tick}
+              className={major ? styles.majeur : styles.mineur}
+              style={{ top: `${(tick / MAX_DEPTH) * 100}%` }}
+            >
+              {major && <em>{formatDepth(tick, false)}</em>}
+            </span>
+          )
+        })}
+        <div ref={marker} className={styles.repere} style={{ top: `${(depth / MAX_DEPTH) * 100}%` }}>
+          <span className="mesure">{formatDepth(depth)}</span>
+        </div>
+      </div>
+    </div>
+  )
+}

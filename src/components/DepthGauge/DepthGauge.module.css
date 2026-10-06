@@ -1,0 +1,84 @@
+.jauge {
+  --couleur-jauge: var(--ardoise);
+  --couleur-repere: var(--rouge);
+  position: fixed;
+  left: max(10px, calc(var(--marge) * 0.32));
+  top: calc(var(--hauteur-entete) + 28px);
+  bottom: 36px;
+  z-index: 30;
+  width: 30px;
+  pointer-events: none;
+  color: var(--couleur-jauge);
+  transition: color 0.4s var(--ease);
+}
+
+.jauge[data-profond] {
+  --couleur-jauge: var(--email);
+  --couleur-repere: var(--eau);
+}
+
+.echelle {
+  position: relative;
+  height: 100%;
+  border-left: 1px solid color-mix(in srgb, currentColor 30%, transparent);
+}
+
+.mineur,
+.majeur {
+  position: absolute;
+  left: 0;
+  height: 1px;
+  background-color: color-mix(in srgb, currentColor 35%, transparent);
+}
+
+.mineur {
+  width: 5px;
+}
+
+.majeur {
+  width: 10px;
+  background-color: color-mix(in srgb, currentColor 60%, transparent);
+}
+
+.majeur em {
+  position: absolute;
+  left: 14px;
+  top: -0.55em;
+  font-style: normal;
+  font-size: 0.66rem;
+  font-stretch: var(--etroite);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.6;
+}
+
+.repere {
+  position: absolute;
+  left: -4px;
+  width: 18px;
+  height: 2px;
+  background-color: var(--couleur-repere);
+  transition: background-color 0.4s var(--ease);
+}
+
+.repere span {
+  position: absolute;
+  left: 24px;
+  top: -0.62em;
+  padding: 0.12em 0.3em;
+  background-color: var(--couleur-repere);
+  color: var(--email);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  transition: background-color 0.4s var(--ease);
+}
+
+.jauge[data-profond] .repere span {
+  color: var(--fond);
+}
+
+@media (max-width: 1023px) {
+  .jauge {
+    display: none;
+  }
+}

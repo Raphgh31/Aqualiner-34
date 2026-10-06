@@ -173,3 +173,7 @@ button {
     scroll-behavior: auto !important;
   }
 }
+
+main:focus {
+  outline: none;
+}

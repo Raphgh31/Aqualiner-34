@@ -1,0 +1,144 @@
+.pied {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--e-section);
+  padding-bottom: calc(var(--e-6) + env(safe-area-inset-bottom));
+}
+
+.contenu {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gouttiere);
+  row-gap: var(--e-9);
+  padding-inline: var(--marge);
+  max-width: var(--largeur-max);
+  margin-inline: auto;
+}
+
+.appel {
+  grid-column: 2 / span 7;
+}
+
+.titre {
+  max-width: 12ch;
+}
+
+.texte {
+  margin-top: var(--e-5);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-5) var(--e-7);
+  margin-top: var(--e-7);
+}
+
+.telephone {
+  font-size: clamp(2.2rem, 1.6rem + 2vw, 3.4rem);
+  color: var(--encre);
+  text-decoration: none;
+}
+
+.telephone:hover {
+  color: var(--eau);
+}
+
+.infos {
+  grid-column: 10 / span 3;
+  align-self: end;
+  display: grid;
+  gap: var(--e-5);
+}
+
+.infos dt {
+  font-size: var(--t-petit);
+  color: var(--encre-2);
+}
+
+.infos dd {
+  margin: 0;
+}
+
+.infos a {
+  color: var(--encre);
+  text-decoration: none;
+}
+
+.infos a:hover {
+  text-decoration: underline;
+}
+
+.plan {
+  grid-column: 2 / -1;
+  padding-top: var(--e-6);
+  border-top: 1px solid var(--trait);
+}
+
+.plan ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-3) var(--e-7);
+}
+
+.plan a {
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
+  font-stretch: 112%;
+  font-weight: 500;
+  color: var(--encre);
+  text-decoration: none;
+}
+
+.plan a:hover {
+  color: var(--eau);
+}
+
+.zone {
+  grid-column: 2 / span 7;
+  margin-top: calc(var(--e-7) * -1);
+}
+
+.bas {
+  grid-column: 2 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--e-3) var(--e-6);
+}
+
+.bas a {
+  color: var(--encre-2);
+}
+
+.marque {
+  font-size: 1.1rem;
+}
+
+.profondeur {
+  margin-left: auto;
+  font-size: clamp(3rem, 2rem + 4vw, 6rem);
+  color: var(--eau);
+  opacity: 0.9;
+}
+
+@media (max-width: 1023px) {
+  .appel,
+  .infos,
+  .plan,
+  .zone,
+  .bas {
+    grid-column: 1 / -1;
+  }
+  .contenu {
+    row-gap: var(--e-8);
+  }
+  .zone {
+    margin-top: calc(var(--e-5) * -1);
+  }
+  .profondeur {
+    width: 100%;
+    margin-left: 0;
+  }
+}

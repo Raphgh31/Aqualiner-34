@@ -1,0 +1,29 @@
+.etiquette {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 80;
+  pointer-events: none;
+}
+
+.etiquette span {
+  display: block;
+  transform: translate(18px, 14px) scale(0.6);
+  opacity: 0;
+  padding: 0.45em 0.7em 0.5em;
+  background-color: var(--ardoise);
+  color: var(--email);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-stretch: 112%;
+  white-space: nowrap;
+  transform-origin: top left;
+  transition:
+    opacity 0.25s var(--ease),
+    transform 0.35s var(--ease);
+}
+
+.etiquette[data-visible] span {
+  opacity: 1;
+  transform: translate(18px, 14px) scale(1);
+}
