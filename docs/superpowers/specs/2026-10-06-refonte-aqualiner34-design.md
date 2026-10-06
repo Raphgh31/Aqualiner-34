@@ -24,34 +24,38 @@ Trois fils narratifs, repris de page en page :
 
 Ton : précis, chaleureux, sans superlatifs. Des phrases courtes, des faits, le vocabulaire du métier (lé, margelle, skimmer, refoulement) expliqué sans jargon.
 
-## 3. Direction artistique
+## 3. Direction artistique — « Signalétique de bassin »
 
-### Palette (tirée des matériaux visibles sur les photos et du rouge du logo)
+*Révisée le 6 octobre 2026 après calibrage avec les skills frontend-design et impeccable : la première version (fond crème, serif éditoriale, accent terre cuite, filets fins, étiquettes en capitales) correspondait aux réflexes typiques des sites générés. La direction ci-dessous est issue du tirage impeccable (clé 6bdecbdf) parmi sept pistes tirées du monde du bassin ; contrat détaillé dans `.impeccable/surfaces/`.*
+
+Le site emprunte la signalétique d'un bassin : marquages de profondeur, ligne d'eau, ligne de fond. On descend de la surface (0,00 m) jusqu'au fond, là où Aqualiner travaille.
+
+### Palette
 
 | Jeton | Valeur | Origine | Usage |
 |---|---|---|---|
-| `--chaux` | `#F2EEE6` | Murs enduits à la chaux du Biterrois | Fond principal |
-| `--pierre` | `#E3DCCD` | Margelles en pierre claire | Surfaces secondaires, filets |
-| `--encre` | `#151A1C` | Noir teinté de bleu-vert | Texte |
-| `--anthracite` | `#1C2427` | Membrane gris anthracite | Sections sombres, pied de page |
-| `--gris` | `#59605F` | — | Texte secondaire (contraste 5,6:1 sur chaux) |
-| `--brique` | `#A3402A` | Rouge du logo, terres et tuiles du Languedoc | Accent rare (5,5:1 sur chaux) : le « cordon de soudure », les étiquettes actives, le focus ; variante éclaircie sur fond anthracite |
+| `--email` | `#EFF2F1` | Blanc émaillé des carreaux de marquage | Fond principal |
+| `--ardoise` | `#232A30` | Membrane ardoise / anthracite à sec | Texte (12,9:1), grands aplats sombres |
+| `--fond` | `#13303D` | Membrane anthracite vue sous 1,5 m d'eau | Sections « profondes », pied de page |
+| `--gris` | `#5A6369` | — | Texte secondaire (5,4:1 sur émail) |
+| `--rouge` | `#C42B2E` | Rouge du logo, chiffres de profondeur | Marquages et état actif près de la surface (5,0:1) |
+| `--eau` | `#5CC9C6` | Turquoise d'un bassin éclairé | Marquages dans les sections profondes (7,0:1 sur fond), lumière |
 
-Le bleu de l'eau n'apparaît **que** dans les photos et dans le rendu WebGL : l'interface reste minérale pour ne pas concurrencer les images.
+Détail physique assumé : sous l'eau, le rouge disparaît le premier. Les marquages sont rouges dans les sections claires (surface) et deviennent turquoise dans les sections profondes.
 
 ### Typographie
 
-- **Newsreader** (variable, axe de taille optique 24-72) : énoncés, titres, légendes en italique. Éditoriale, tranchante, peu vue.
-- **Archivo** (variable, largeur 100-125 %) : texte courant en largeur normale ; étiquettes, numéros et métadonnées en **largeur étendue, capitales espacées**, comme le lettrage d'un plan d'architecte.
-- Polices auto-hébergées, réduites au latin + français, axes limités : 53 Ko (Archivo) + 84 Ko (Newsreader) + 94 Ko (italique, chargé seulement s'il sert).
-- Titres en casse de phrase, jamais en capitales. Tailles mesurées : le plus grand titre du site est celui du hero.
+- **Archivo** seule, variable, en trois largeurs : **étendue** (125 %) pour les titres, en casse de phrase, ce qui prolonge le lettrage étendu du site actuel ; **condensée** et grasse (62-70 %) pour les chiffres de profondeur et les mesures, en chiffres tabulaires ; **normale** pour le texte courant (17-18 px, interlignage 1,55, 65-75 caractères).
+- Un seul fichier de police auto-hébergé, réduit au latin + français.
+- Pas d'étiquette en surtitre au-dessus des titres, pas de capitales espacées en guise de décor, pas de numérotation de sections : seules les vraies séquences (étapes de chantier, chronologie) sont numérotées.
 
 ### Grille et composition
 
-- 12 colonnes, marges `clamp(20px, 4vw, 64px)`. Mises en page **asymétriques** : texte sur 4-5 colonnes, image sur 7-8, décalages verticaux ; aucune section entièrement centrée.
-- Des **filets** d'un pixel structurent les pages (cartouches de section « 03 — Le geste »), à la manière d'un plan.
-- Angles vifs, aucune ombre, aucun dégradé décoratif, aucun verre dépoli, aucune carte arrondie.
-- Légendes de type « Fig. 04 » en italique sous les images, avec date de prise de vue.
+- 12 colonnes, marges `clamp(20px, 4vw, 64px)`, compositions asymétriques, texte aligné à gauche, aucune section entièrement centrée.
+- Une **jauge de profondeur** graduée sur le bord gauche (ordinateur) indique où l'on est dans la page, en mètres.
+- Les séparations sont des **lignes de soudure** (double trait fin), jamais des ombres ni des cartes.
+- Les **actions** sont des plaques émaillées : rectangles pleins à angles vifs, rouges ou ardoise.
+- **Photographies annotées** : des lignes de rappel nomment les parties des vrais bassins (lé, soudure, margelle, skimmer, motif).
 
 ### Photographie
 
@@ -61,18 +65,18 @@ Le bleu de l'eau n'apparaît **que** dans les photos et dans le rendu WebGL : l'
 
 ### Mouvement
 
-- Framer Motion, `MotionConfig reducedMotion="user"`. Courbe maison `[0.22, 1, 0.36, 1]`, durées de 0,5 à 0,9 s, décalages de 60 à 90 ms : rapide, jamais languissant.
-- Révélations : lignes de texte qui montent depuis un masque, images dévoilées par `clip-path` avec léger dézoom. Parallaxe limitée à ±6 %.
+- Motion (ex-Framer Motion), `MotionConfig reducedMotion="user"`, courbe `[0.22, 1, 0.36, 1]`, 0,4 à 0,8 s.
+- **Un seul moment orchestré** au chargement : la surface de l'eau qui se pose dans le hero. Pas d'apparition en fondu sur chaque section ; le mouvement répond surtout aux gestes du visiteur (glisser, choisir une finition, survoler un projet) et au défilement dans les séquences qui le justifient.
 - Défilement doux (Lenis) sur ordinateur uniquement, désactivé si « réduire les animations ».
-- Curseur système conservé ; sur les médias interactifs, une étiquette discrète l'accompagne (« Voir », « Glisser »). Rien sur écran tactile.
+- Curseur système conservé ; une étiquette discrète l'accompagne sur les médias interactifs. Rien sur écran tactile.
 
 ## 4. Les cinq moments signatures
 
 1. **Hero « De fond en comble »** (accueil) : la croix occitane sous une eau vivante (WebGL : réfraction et caustiques masquées sur la seule surface de l'eau). Au défilement, la caméra plonge vers le motif, le cadre se resserre, une légende apparaît ; puis le plan s'ouvre sur le même bassin vu depuis l'escalier. Le zoom se fait dans le shader pour rester net. Image statique si WebGL est absent ou si l'animation est réduite.
 2. **Avant / après** (accueil, projet « Au pied du château ») : comparaison glissable entre le bassin vidé et la membrane posée. Accessible au clavier (`input range`).
-3. **Le geste** (accueil, savoir-faire) : section sombre, photo de la soudure épinglée, cinq étapes du chantier qui s'allument au défilement le long d'un cordon brique qui se dessine.
+3. **Le geste** (accueil, savoir-faire) : section profonde, photo de la soudure épinglée, cinq étapes du chantier qui s'allument au défilement le long d'une soudure tracée d'un seul trait.
 4. **Le nuancier de l'eau** (accueil) : une piscine vue du ciel, rendue en WebGL (absorption de la lumière selon la profondeur, caustiques animées, ondes au passage du pointeur). On choisit une finition (sable, gris clair, anthracite, bleu, ardoise 3D…) et l'eau change de teinte ; des photos de vrais bassins dans cette finition accompagnent le rendu. Mention : simulation indicative.
-5. **Index des réalisations et transition de projet** : liste numérotée dont l'image suit le curseur ; « Projet suivant » agrandit l'image jusqu'à devenir le hero de la page suivante.
+5. **Index des réalisations et transition de projet** : liste dont l'image suit le curseur et qui isole le projet survolé ; « Projet suivant » agrandit l'image jusqu'à devenir le hero de la page suivante.
 
 ## 5. Architecture
 
@@ -105,7 +109,7 @@ Projets racontés (photos réelles, regroupées par date de prise de vue) : Croi
 
 ## 7. Accessibilité et mobile
 
-- Contrastes AA vérifiés, focus visible (anneau brique), lien d'évitement, navigation clavier complète, `aria-live` sur le formulaire, textes alternatifs rédigés.
+- Contrastes AA vérifiés, focus visible (anneau rouge de marquage, turquoise sur fond profond), lien d'évitement, navigation clavier complète, `aria-live` sur le formulaire, textes alternatifs rédigés.
 - `prefers-reduced-motion` : pas de défilement doux, pas de zoom ni de parallaxe, WebGL figé.
 - Mobile : hero plus court et moins zoomé, index des projets en liste illustrée, nuancier en pleine largeur, bandeau d'appel en bas d'écran après le hero, cibles tactiles de 44 px minimum.
 

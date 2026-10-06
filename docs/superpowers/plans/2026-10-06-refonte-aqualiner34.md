@@ -15,8 +15,8 @@
 - Langue du site : français ; ton précis, sans superlatifs ; aucune information non sourcée (inconnues = `null`, rendues « À préciser »).
 - `vite.config.ts` : `base: './'` ; routeur : `HashRouter`.
 - Animations : Framer Motion sous `<MotionConfig reducedMotion="user">` ; pas d'`initial={false}` sur l'`AnimatePresence` des pages ; un élément avec son propre `whileHover` n'hérite plus des variantes du parent.
-- Palette exacte : chaux `#F2EEE6`, pierre `#E3DCCD`, encre `#151A1C`, anthracite `#1C2427`, gris `#59605F`, brique `#A3402A`.
-- Polices : Newsreader (opsz 24-72, wght 300-500) et Archivo (wdth 100-125, wght 300-700), auto-hébergées, sous-ensemble latin + français.
+- Palette exacte : émail `#EFF2F1`, ardoise `#232A30`, fond `#13303D`, gris `#5A6369`, rouge `#C42B2E`, eau `#5CC9C6`.
+- Police : Archivo seule (wdth 62-125, wght 300-700), auto-hébergée, sous-ensemble latin + français ; pas de surtitres, pas de capitales décoratives, pas de numérotation hors vraies séquences.
 - Interdits visuels : dégradés violets, verre dépoli, émojis en icônes, mise en page entièrement centrée, coins arrondis et ombres.
 - Images : uniquement les photos de chantiers réels de l'audit ; photos n° 3, 4, 5 fournies exclues.
 - Avant tout push : `npm run build` sans erreur + contrôle navigateur à 1440 px et 390 px.
@@ -37,10 +37,10 @@
 - Create: `package.json`, `vite.config.ts`, `tsconfig*.json`, `index.html`, `src/main.tsx`, `src/App.tsx`, `src/styles/{tokens,base,fonts}.css`, `src/assets/fonts/*.woff2`, `scripts/fonts/subset.py`, `vitest.config.ts`, `CLAUDE.md`, `.github/workflows/deploy.yml`, `.gitignore`
 
 **Interfaces:**
-- Produces: jetons CSS `--chaux --pierre --encre --anthracite --gris --brique --brique-clair --marge --gouttiere --ease` ; familles `"Newsreader"` et `"Archivo"` ; scripts npm `dev`, `build`, `test`, `images`, `preview`.
+- Produces: jetons CSS `--email --ardoise --fond --gris --rouge --eau --marge --gouttiere --ease` ; famille `"Archivo"` (largeurs 62-125) ; scripts npm `dev`, `build`, `test`, `images`, `preview`.
 
 - [ ] **Step 1:** Initialiser Vite React TS, installer `react-router-dom framer-motion lenis` et en dev `vitest sharp`.
-- [ ] **Step 2:** Générer les polices avec `scripts/fonts/subset.py` (unicode `U+0000-00FF,U+0131,U+0152-0153,U+0178,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215`), déclarer les `@font-face` et précharger Archivo + Newsreader romain.
+- [ ] **Step 2:** Générer les polices avec `scripts/fonts/subset.py` (unicode `U+0000-00FF,U+0131,U+0152-0153,U+0178,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215`), déclarer le `@font-face` et précharger Archivo.
 - [ ] **Step 3:** Écrire `src/smoke.test.ts` (`expect(1+1).toBe(2)`) ; `npm test` → PASS ; `npm run build` → OK.
 - [ ] **Step 4:** Workflow Pages (`actions/upload-pages-artifact` + `actions/deploy-pages`, Node 22, `npm ci && npm run build`), `CLAUDE.md` du projet.
 - [ ] **Step 5:** Commit `chore: socle Vite React TS, polices et déploiement`.
