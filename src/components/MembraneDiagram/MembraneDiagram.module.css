@@ -1,0 +1,88 @@
+.eclate {
+  display: grid;
+  gap: var(--e-5);
+  margin: 0;
+}
+
+.schema {
+  position: relative;
+  display: grid;
+  gap: var(--e-5);
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.fils line {
+  stroke: #b3bfc1;
+  stroke-width: 0.8;
+}
+
+.rappel {
+  stroke: currentColor;
+  stroke-width: 1;
+  opacity: 0.5;
+}
+
+.point {
+  fill: var(--rouge);
+}
+
+/* Mobile : la légende sous le schéma, chaque couche reconnaissable à sa pastille. */
+.legende {
+  display: grid;
+  gap: var(--e-3);
+}
+
+.legende li {
+  display: grid;
+  grid-template-columns: 1.1rem minmax(0, 1fr);
+  column-gap: var(--e-3);
+  align-items: baseline;
+}
+
+.pastille {
+  grid-row: span 2;
+  align-self: start;
+  width: 1.1rem;
+  height: 0.75rem;
+  margin-top: 0.3em;
+  border: 1px solid;
+}
+
+.nom {
+  font-weight: 600;
+}
+
+.detail {
+  font-size: var(--t-petit);
+  color: var(--encre-2);
+}
+
+/* Ordinateur : chaque libellé à hauteur de sa couche, au bout de la ligne de rappel. */
+@media (min-width: 1024px) {
+  .schema {
+    grid-template-columns: minmax(0, 520fr) minmax(0, 300fr);
+    gap: 0;
+  }
+  .legende {
+    position: relative;
+    display: block;
+  }
+  .legende li {
+    position: absolute;
+    left: 0.75rem;
+    right: 0;
+    translate: 0 -0.8em;
+  }
+  .pastille {
+    display: none;
+  }
+  .legende li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

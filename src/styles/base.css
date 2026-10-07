@@ -174,6 +174,12 @@ button {
   }
 }
 
+/* La police n'a pas d'italique : pas d'oblique simulé pour les titres d'œuvres. */
+cite,
+em {
+  font-style: normal;
+}
+
 main:focus {
   outline: none;
 }

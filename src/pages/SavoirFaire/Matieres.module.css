@@ -1,0 +1,95 @@
+.matieres {
+  display: grid;
+  gap: var(--e-6);
+}
+
+/* Bascule à deux positions, en plaques. */
+.bascule {
+  display: inline-flex;
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--ardoise);
+}
+
+.option {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--e-5);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.25s var(--ease),
+    color 0.25s var(--ease);
+}
+
+.option[data-actif] {
+  background-color: var(--ardoise);
+  color: var(--email);
+}
+
+.option:has(input:focus-visible) {
+  outline: 2px solid var(--marque);
+  outline-offset: 2px;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--e-6) var(--gouttiere);
+}
+
+.matiere {
+  display: grid;
+  gap: var(--e-3);
+  margin: 0;
+}
+
+.photos {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.sec,
+.mouille {
+  position: absolute;
+  inset: 0;
+}
+
+.mouille {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 0.8s var(--ease);
+}
+
+.photos[data-mouille] .mouille {
+  clip-path: inset(0);
+}
+
+.matiere figcaption {
+  display: grid;
+  gap: var(--e-1);
+}
+
+.nom {
+  font-weight: 600;
+  font-stretch: 112%;
+}
+
+.eau {
+  color: var(--encre-2);
+}
+
+@media (min-width: 1024px) {
+  .grille {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mouille,
+  .option {
+    transition: none;
+  }
+}

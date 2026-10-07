@@ -1,0 +1,288 @@
+.ouverture {
+  padding: calc(var(--hauteur-entete) + var(--e-9)) 0 var(--e-10);
+}
+
+.titre,
+.chapo,
+.photo {
+  grid-column: 1 / -1;
+}
+
+.titre {
+  max-width: 16ch;
+}
+
+.chapo {
+  margin-top: var(--e-5);
+  color: var(--gris);
+}
+
+.photo {
+  display: grid;
+  gap: var(--e-3);
+  margin: var(--e-8) 0 0;
+}
+
+/* La membrane : texte, éclaté, fiche et traitements. */
+.membrane {
+  padding-bottom: var(--e-section);
+}
+
+.membraneTexte,
+.schema,
+.fiche,
+.traitements {
+  grid-column: 1 / -1;
+}
+
+.membraneTexte {
+  display: grid;
+  gap: var(--e-5);
+  max-width: 40rem;
+}
+
+.schema {
+  margin-top: var(--e-8);
+}
+
+.fiche {
+  margin-top: var(--e-8);
+  border-top: 2px solid var(--ardoise);
+}
+
+.ligne {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--e-4);
+  padding: var(--e-4) 0;
+  border-bottom: 1px solid var(--joint);
+}
+
+.ligne dt {
+  font-size: var(--t-petit);
+  color: var(--gris);
+}
+
+.ligne dd {
+  display: grid;
+  justify-items: end;
+  margin: 0;
+  text-align: right;
+}
+
+.valeur {
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.3rem);
+}
+
+.traitements {
+  display: grid;
+  gap: var(--e-4);
+  margin-top: var(--e-8);
+}
+
+.traitements ul {
+  display: grid;
+  gap: var(--e-2);
+}
+
+.traitements li::before {
+  content: '';
+  display: inline-block;
+  width: 0.9rem;
+  height: 2px;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  background-color: var(--rouge);
+}
+
+/* Ce qu'elle permet : une liste séparée par des soudures. */
+.avantages {
+  padding-block: var(--e-section);
+  background-color: var(--email-2);
+}
+
+.avantagesTitre,
+.liste {
+  grid-column: 1 / -1;
+}
+
+.liste {
+  margin-top: var(--e-7);
+  border-bottom: 3px double var(--joint);
+}
+
+.liste li {
+  padding: var(--e-5) 0;
+  border-top: 3px double var(--joint);
+  font-size: var(--t-chapo);
+  line-height: 1.4;
+  max-width: 46ch;
+}
+
+.methode {
+  padding-block: var(--e-section);
+}
+
+.methodeTexte,
+.etapes {
+  grid-column: 1 / -1;
+}
+
+.methodeTexte {
+  display: grid;
+  gap: var(--e-5);
+  align-content: start;
+}
+
+.avantApres {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--e-3);
+  margin: var(--e-4) 0 0;
+}
+
+.avantApres figcaption {
+  grid-column: 1 / -1;
+}
+
+.etapes {
+  margin-top: var(--e-8);
+}
+
+.reliefs {
+  padding-block: var(--e-section);
+}
+
+.reliefsTexte,
+.reliefsOutil {
+  grid-column: 1 / -1;
+}
+
+.reliefsTexte {
+  display: grid;
+  gap: var(--e-5);
+  max-width: 40rem;
+}
+
+.reliefsOutil {
+  margin-top: var(--e-7);
+}
+
+.motifs {
+  padding-block: var(--e-section);
+}
+
+.motifsTitre,
+.motifsTexte {
+  grid-column: 1 / -1;
+}
+
+.motifsTexte {
+  margin-top: var(--e-5);
+}
+
+.bande {
+  margin-top: var(--e-8);
+}
+
+.garanties {
+  padding-block: var(--e-section);
+}
+
+.garantiesTitre,
+.labels,
+.action {
+  grid-column: 1 / -1;
+}
+
+.labels {
+  display: grid;
+  gap: var(--e-7);
+  margin-top: var(--e-7);
+}
+
+.labels li {
+  display: grid;
+  gap: var(--e-3);
+  align-content: start;
+  padding-top: var(--e-5);
+  border-top: 3px double var(--joint);
+}
+
+.logo {
+  width: 96px;
+}
+
+.action {
+  margin-top: var(--e-8);
+}
+
+@media (min-width: 1024px) {
+  .titre {
+    grid-column: 2 / span 8;
+  }
+  .chapo {
+    grid-column: 2 / span 6;
+  }
+  .photo {
+    grid-column: 1 / -1;
+  }
+  .membraneTexte {
+    grid-column: 2 / span 6;
+  }
+  /* Le schéma et les traitements à gauche, la fiche à droite sur toute leur hauteur. */
+  .schema {
+    grid-column: 1 / span 7;
+    grid-row: 2;
+  }
+  .fiche {
+    grid-column: 9 / -1;
+    grid-row: 2 / span 2;
+    align-self: start;
+  }
+  .traitements {
+    grid-column: 2 / span 6;
+    grid-row: 3;
+  }
+  .avantagesTitre {
+    grid-column: 2 / span 4;
+  }
+  .liste {
+    grid-column: 7 / -1;
+    margin-top: 0;
+  }
+  .methodeTexte {
+    grid-column: 2 / span 4;
+    position: sticky;
+    top: calc(var(--hauteur-entete) + var(--e-6));
+    align-self: start;
+  }
+  .etapes {
+    grid-column: 7 / -1;
+    margin-top: 0;
+  }
+  .reliefsTexte {
+    grid-column: 2 / span 6;
+  }
+  .reliefsOutil {
+    grid-column: 2 / -1;
+  }
+  .motifsTitre {
+    grid-column: 2 / span 6;
+  }
+  .motifsTexte {
+    grid-column: 2 / span 5;
+  }
+  .garantiesTitre {
+    grid-column: 2 / span 6;
+  }
+  .labels {
+    grid-column: 2 / -1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gouttiere);
+  }
+  .action {
+    grid-column: 2 / -1;
+  }
+}

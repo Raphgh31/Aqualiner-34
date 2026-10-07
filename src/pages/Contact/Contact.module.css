@@ -1,0 +1,75 @@
+.contact {
+  padding: calc(var(--hauteur-entete) + var(--e-9)) 0 var(--e-section);
+}
+
+.entete,
+.formulaire,
+.direct {
+  grid-column: 1 / -1;
+}
+
+.entete {
+  display: grid;
+  gap: var(--e-5);
+}
+
+.chapo {
+  color: var(--gris);
+  max-width: 44ch;
+}
+
+.formulaire {
+  margin-top: var(--e-8);
+}
+
+.direct {
+  display: grid;
+  gap: var(--e-6);
+  margin-top: var(--e-9);
+  padding-top: var(--e-6);
+  border-top: 2px solid var(--ardoise);
+  align-content: start;
+}
+
+.bloc {
+  display: grid;
+  gap: var(--e-2);
+  justify-items: start;
+}
+
+.telephone {
+  font-size: clamp(2.2rem, 1.6rem + 2vw, 3.2rem);
+  color: var(--ardoise);
+  text-decoration: none;
+}
+
+.telephone:hover {
+  color: var(--rouge);
+}
+
+.lien {
+  font-weight: 600;
+  color: var(--ardoise);
+}
+
+.direct address {
+  font-style: normal;
+  line-height: 1.5;
+}
+
+@media (min-width: 1024px) {
+  .entete {
+    grid-column: 2 / span 7;
+  }
+  .formulaire {
+    grid-column: 2 / span 7;
+  }
+  .direct {
+    grid-column: 10 / -1;
+    grid-row: 2;
+    position: sticky;
+    top: calc(var(--hauteur-entete) + var(--e-6));
+    align-self: start;
+    margin-top: var(--e-8);
+  }
+}

@@ -1,0 +1,40 @@
+.vide {
+  min-height: 80svh;
+  padding: calc(var(--hauteur-entete) + var(--e-9)) 0 var(--e-section);
+}
+
+.texte,
+.photo {
+  grid-column: 1 / -1;
+}
+
+.texte {
+  display: grid;
+  gap: var(--e-6);
+  justify-items: start;
+  align-content: start;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-6);
+}
+
+.photo {
+  display: grid;
+  gap: var(--e-3);
+  margin: var(--e-8) 0 0;
+  max-width: 640px;
+}
+
+@media (min-width: 1024px) {
+  .texte {
+    grid-column: 2 / span 5;
+  }
+  .photo {
+    grid-column: 8 / -1;
+    margin-top: 0;
+  }
+}
