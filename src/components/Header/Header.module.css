@@ -1,0 +1,181 @@
+.entete {
+  --encre-entete: var(--ardoise);
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  color: var(--encre-entete);
+  transition:
+    transform 0.5s var(--ease),
+    background-color 0.35s var(--ease),
+    color 0.35s var(--ease);
+}
+
+.entete[data-clair] {
+  --encre-entete: var(--email);
+  --logo: var(--rouge-clair);
+}
+
+.entete[data-plein] {
+  background-color: var(--email);
+  box-shadow: 0 1px 0 var(--joint);
+}
+
+.entete[data-cache] {
+  transform: translateY(-100%);
+}
+
+/* Un en-tête masqué réapparaît dès qu'on y navigue au clavier. */
+.entete:focus-within {
+  transform: none;
+}
+
+.barre {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: var(--e-6);
+  height: var(--hauteur-entete);
+  padding-inline: var(--marge);
+  max-width: var(--largeur-max);
+  margin-inline: auto;
+}
+
+.marque {
+  font-size: 1.32rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav ul {
+  display: flex;
+  gap: clamp(1rem, 2vw, 2.25rem);
+}
+
+.lien {
+  position: relative;
+  display: inline-block;
+  padding-block: 0.6rem;
+  font-size: var(--t-ui);
+  font-weight: 520;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Repère de profondeur sous le lien actif. */
+.lien::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.25rem;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease);
+}
+
+.lien:hover::after {
+  transform: scaleX(1);
+}
+
+.lien[aria-current='page']::after {
+  transform: scaleX(1);
+  background-color: var(--rouge);
+}
+
+.entete[data-clair] .lien[aria-current='page']::after {
+  background-color: var(--eau);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--e-5);
+}
+
+.telephone {
+  font-stretch: var(--etroite);
+  font-weight: 650;
+  font-size: 1.12rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  color: inherit;
+}
+
+.telephone:hover {
+  text-decoration: underline;
+}
+
+.menuBouton {
+  display: none;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 44px;
+  padding: 0 0.25rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-weight: 600;
+  font-stretch: 112%;
+}
+
+.traits {
+  position: relative;
+  width: 22px;
+  height: 10px;
+}
+
+.traits i {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transition: transform 0.4s var(--ease);
+}
+
+.traits i:first-child {
+  top: 0;
+}
+
+.traits i:last-child {
+  bottom: 0;
+}
+
+.traits[data-ouvert] i:first-child {
+  transform: translateY(4px) rotate(35deg);
+}
+
+.traits[data-ouvert] i:last-child {
+  transform: translateY(-4px) rotate(-35deg);
+}
+
+@media (max-width: 1180px) {
+  .telephone {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .barre {
+    grid-template-columns: 1fr auto;
+    height: 64px;
+  }
+  .nav,
+  .actions {
+    display: none;
+  }
+  .menuBouton {
+    display: inline-flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entete,
+  .lien::after,
+  .traits i {
+    transition: none;
+  }
+}

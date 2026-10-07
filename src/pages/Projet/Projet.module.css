@@ -1,0 +1,95 @@
+.fiche {
+  padding-block: var(--e-9) var(--e-10);
+}
+
+.recit {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--e-6);
+  justify-items: start;
+  align-content: start;
+}
+
+.intro {
+  max-width: 34ch;
+}
+
+/* Fiche du projet : libellé à gauche, valeur à droite ; ce qui reste à confirmer est en gris. */
+.donnees {
+  grid-column: 1 / -1;
+  margin-top: var(--e-7);
+  border-top: 2px solid var(--ardoise);
+}
+
+.ligne {
+  display: grid;
+  grid-template-columns: minmax(8rem, 2fr) minmax(0, 3fr);
+  gap: var(--e-4);
+  padding: var(--e-4) 0;
+  border-bottom: 1px solid var(--joint);
+}
+
+.ligne dt {
+  font-size: var(--t-petit);
+  color: var(--gris);
+  padding-top: 0.15em;
+}
+
+.ligne dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+.ligne dd[data-inconnu] {
+  color: var(--gris);
+  font-weight: 400;
+}
+
+.particularites {
+  display: grid;
+  gap: var(--e-2);
+}
+
+.avantApres {
+  padding-bottom: var(--e-10);
+}
+
+.comparaison {
+  grid-column: 1 / -1;
+}
+
+.introuvable {
+  min-height: 78svh;
+  padding: calc(var(--hauteur-entete) + var(--e-10)) 0 var(--e-section);
+}
+
+.message {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--e-6);
+  justify-items: start;
+  max-width: 44rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-6);
+}
+
+@media (min-width: 1024px) {
+  .recit {
+    grid-column: 2 / span 5;
+  }
+  .donnees {
+    grid-column: 8 / -1;
+    margin-top: 0;
+  }
+  .comparaison {
+    grid-column: 2 / span 8;
+  }
+  .message {
+    grid-column: 2 / span 8;
+  }
+}

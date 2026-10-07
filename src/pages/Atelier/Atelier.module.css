@@ -1,0 +1,243 @@
+.ouverture {
+  padding: calc(var(--hauteur-entete) + var(--e-9)) 0 var(--e-section);
+}
+
+.titre,
+.chapo,
+.equipe {
+  grid-column: 1 / -1;
+}
+
+.titre {
+  max-width: 16ch;
+}
+
+.chapo {
+  margin-top: var(--e-5);
+  color: var(--gris);
+}
+
+/* L'équipe : les portraits à leur taille d'origine (120 px), les noms en grand. */
+.equipe {
+  display: grid;
+  gap: var(--e-6);
+  margin-top: var(--e-9);
+}
+
+.equipe li {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: var(--e-5);
+  align-items: end;
+}
+
+.portrait {
+  width: 96px;
+}
+
+.nom {
+  margin-bottom: var(--e-1);
+}
+
+.histoire {
+  padding-block: var(--e-section);
+}
+
+.histoireTitre,
+.chronologie,
+.citation {
+  grid-column: 1 / -1;
+}
+
+/* Chronologie : une vraie séquence, reliée par une soudure verticale. */
+.chronologie {
+  position: relative;
+  margin-top: var(--e-8);
+  display: grid;
+  gap: var(--e-8);
+}
+
+.chronologie::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.3rem;
+  width: 0;
+  border-left: 3px double var(--joint-fond);
+}
+
+.date {
+  position: relative;
+  display: grid;
+  gap: var(--e-3);
+  padding-left: var(--e-7);
+}
+
+.date::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  background-color: var(--eau);
+}
+
+.annee {
+  font-size: var(--t-titre);
+  color: var(--eau);
+}
+
+.recit {
+  display: grid;
+  gap: var(--e-3);
+  max-width: 40rem;
+}
+
+.citation {
+  margin: var(--e-10) 0 0;
+  display: grid;
+  gap: var(--e-4);
+}
+
+.citation p {
+  font-size: var(--t-section);
+  font-stretch: var(--large);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  max-width: 26ch;
+}
+
+.citation footer {
+  color: var(--gris-fond);
+}
+
+.engagements,
+.labels {
+  padding-block: var(--e-section);
+}
+
+.engagementsTitre,
+.labelsTitre,
+.trois,
+.action {
+  grid-column: 1 / -1;
+}
+
+.trois {
+  display: grid;
+  gap: var(--e-7);
+  margin-top: var(--e-7);
+}
+
+.trois li {
+  display: grid;
+  gap: var(--e-3);
+  align-content: start;
+  padding-top: var(--e-5);
+  border-top: 3px double var(--joint);
+}
+
+.presse {
+  padding-block: var(--e-section);
+  background-color: var(--email-2);
+}
+
+.presseTexte,
+.coupure {
+  grid-column: 1 / -1;
+}
+
+.presseTexte {
+  display: grid;
+  gap: var(--e-5);
+  align-content: start;
+}
+
+.mot {
+  margin: var(--e-4) 0 0;
+  padding-left: var(--e-5);
+  border-left: 1px solid var(--rouge);
+  display: grid;
+  gap: var(--e-3);
+}
+
+.mot p {
+  font-size: var(--t-sous);
+  font-stretch: 112%;
+  line-height: 1.25;
+}
+
+.coupure {
+  display: grid;
+  gap: var(--e-3);
+  margin: var(--e-8) 0 0;
+  max-width: 640px;
+}
+
+.logo {
+  width: 96px;
+}
+
+.action {
+  margin-top: var(--e-8);
+}
+
+@media (min-width: 640px) {
+  .equipe {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .equipe li {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+  .portrait {
+    width: 120px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .titre {
+    grid-column: 2 / span 8;
+  }
+  .chapo {
+    grid-column: 2 / span 6;
+  }
+  .equipe {
+    grid-column: 2 / span 9;
+  }
+  .histoireTitre {
+    grid-column: 2 / span 4;
+    position: sticky;
+    top: calc(var(--hauteur-entete) + var(--e-6));
+    align-self: start;
+  }
+  .chronologie {
+    grid-column: 6 / -1;
+    margin-top: 0;
+  }
+  /* La citation suit la chronologie dans la même colonne : le titre collant ne passe jamais dessus. */
+  .citation {
+    grid-column: 6 / -1;
+  }
+  .engagementsTitre,
+  .labelsTitre {
+    grid-column: 2 / span 6;
+  }
+  .trois {
+    grid-column: 2 / -1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gouttiere);
+  }
+  .action {
+    grid-column: 2 / -1;
+  }
+  .presseTexte {
+    grid-column: 2 / span 4;
+  }
+  .coupure {
+    grid-column: 7 / -1;
+    margin-top: 0;
+  }
+}

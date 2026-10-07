@@ -1,0 +1,68 @@
+.mentions {
+  padding: calc(var(--hauteur-entete) + var(--e-9)) 0 var(--e-section);
+}
+
+.titre,
+.corps {
+  grid-column: 1 / -1;
+}
+
+.corps {
+  display: grid;
+  gap: var(--e-9);
+  margin-top: var(--e-8);
+}
+
+.corps > section {
+  display: grid;
+  gap: var(--e-4);
+  align-content: start;
+}
+
+.fiche {
+  border-top: 2px solid var(--ardoise);
+}
+
+.ligne {
+  display: grid;
+  grid-template-columns: minmax(9rem, 2fr) minmax(0, 3fr);
+  gap: var(--e-4);
+  padding: var(--e-3) 0;
+  border-bottom: 1px solid var(--joint);
+}
+
+.ligne dt {
+  font-size: var(--t-petit);
+  color: var(--gris);
+  padding-top: 0.15em;
+}
+
+.ligne dd {
+  margin: 0;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.ligne dd[data-inconnu] {
+  color: var(--gris);
+  font-weight: 400;
+}
+
+.credits {
+  display: grid;
+  gap: var(--e-3);
+  max-width: var(--mesure-texte);
+}
+
+.corps a {
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  .titre {
+    grid-column: 2 / span 8;
+  }
+  .corps {
+    grid-column: 2 / span 7;
+  }
+}

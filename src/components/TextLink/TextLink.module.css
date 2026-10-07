@@ -1,0 +1,22 @@
+.lien {
+  color: inherit;
+  font-weight: 550;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor), linear-gradient(var(--trait), var(--trait));
+  background-size: 0% 1px, 100% 1px;
+  background-position: 0 100%, 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 0.18em;
+  transition: background-size 0.5s var(--ease);
+}
+
+.lien:hover,
+.lien:focus-visible {
+  background-size: 100% 1px, 100% 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lien {
+    transition: none;
+  }
+}

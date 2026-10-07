@@ -1,0 +1,40 @@
+.eau {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background-color: var(--fond);
+}
+
+/* Même cadrage que le rendu WebGL : la croix reste à sa place pendant le zoom. */
+.photo {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+  transform-origin: 46.4% 69.5%;
+}
+
+.photo img {
+  object-position: 46.4% 69.5%;
+}
+
+@media (max-aspect-ratio: 4/5) {
+  .photo {
+    transform-origin: 48.6% 69.5%;
+  }
+  .photo img {
+    object-position: 48.6% 69.5%;
+  }
+}
+
+.canevas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.9s var(--ease);
+}
+
+.canevas[data-pret] {
+  opacity: 1;
+}

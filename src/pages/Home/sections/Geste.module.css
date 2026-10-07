@@ -1,0 +1,46 @@
+.geste {
+  padding-block: var(--e-section);
+}
+
+.photo {
+  grid-column: 1 / span 6;
+  align-self: start;
+  position: sticky;
+  top: calc(var(--hauteur-entete) + 4vh);
+}
+
+.recit {
+  grid-column: 8 / span 5;
+  display: grid;
+  gap: var(--e-6);
+  justify-items: start;
+}
+
+.chapo {
+  color: var(--encre-2);
+  margin-top: calc(var(--e-3) * -1);
+  margin-bottom: var(--e-5);
+}
+
+.duree {
+  margin-top: var(--e-5);
+  padding-top: var(--e-5);
+  border-top: 1px solid var(--trait);
+  width: 100%;
+}
+
+.duree .mesure {
+  font-size: 1.6em;
+  color: var(--marque);
+}
+
+@media (max-width: 1023px) {
+  .photo,
+  .recit {
+    grid-column: 1 / -1;
+  }
+  .photo {
+    position: static;
+    margin-bottom: var(--e-8);
+  }
+}

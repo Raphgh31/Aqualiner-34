@@ -1,0 +1,17 @@
+/* Au-dessus du contenu et de la jauge, sous l'en-tête (50) et le rideau des pages (45). */
+.fenetre,
+.deplacement {
+  position: fixed;
+  z-index: 44;
+  pointer-events: none;
+  background-color: var(--fond);
+}
+
+.fenetre {
+  inset: 0;
+  will-change: clip-path;
+}
+
+.deplacement {
+  overflow: hidden;
+}

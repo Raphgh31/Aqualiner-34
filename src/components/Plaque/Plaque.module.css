@@ -1,0 +1,92 @@
+.plaque {
+  --fond-plaque: var(--rouge);
+  --texte-plaque: #fff;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9em;
+  min-height: 52px;
+  padding: 0.85em 1.35em 0.9em;
+  border: 0;
+  border-radius: 2px;
+  background-color: var(--fond-plaque);
+  color: var(--texte-plaque);
+  font-size: var(--t-ui);
+  font-stretch: 112%;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  isolation: isolate;
+  overflow: hidden;
+  transition: color 0.35s var(--ease);
+}
+
+/* Le fond « monte » comme un niveau d'eau au survol. */
+.plaque::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--survol-plaque, var(--ardoise));
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.45s var(--ease);
+}
+
+.plaque:hover::before,
+.plaque:focus-visible::before {
+  transform: scaleY(1);
+}
+
+.rouge {
+  --fond-plaque: var(--rouge);
+  --survol-plaque: #a92225;
+}
+
+.ardoise {
+  --fond-plaque: var(--ardoise);
+  --survol-plaque: var(--fond);
+}
+
+.email {
+  --fond-plaque: var(--email);
+  --texte-plaque: var(--ardoise);
+  --survol-plaque: #fff;
+}
+
+.ligne {
+  --fond-plaque: transparent;
+  --texte-plaque: currentColor;
+  --survol-plaque: color-mix(in srgb, currentColor 12%, transparent);
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+
+.petite {
+  min-height: 44px;
+  padding: 0.65em 1.05em 0.7em;
+  font-size: var(--t-petit);
+}
+
+.libelle {
+  white-space: nowrap;
+}
+
+.fleche {
+  flex: none;
+  transition: transform 0.45s var(--ease);
+}
+
+.plaque:hover .fleche,
+.plaque:focus-visible .fleche {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plaque::before {
+    transition: none;
+  }
+  .fleche {
+    transition: none;
+  }
+}

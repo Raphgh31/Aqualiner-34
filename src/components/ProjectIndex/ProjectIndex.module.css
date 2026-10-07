@@ -1,0 +1,160 @@
+.index {
+  position: relative;
+}
+
+.liste {
+  border-bottom: 3px double var(--joint);
+}
+
+/* Les lignes sont séparées par une soudure : un double trait fin. */
+.item {
+  border-top: 3px double var(--joint);
+}
+
+.ligne {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
+  grid-template-areas:
+    'vignette titre'
+    'vignette details'
+    'vignette date';
+  align-content: center;
+  column-gap: var(--e-5);
+  row-gap: var(--e-1);
+  padding-block: var(--e-5);
+  color: var(--encre);
+  text-decoration: none;
+  transition: opacity 0.35s var(--ease);
+}
+
+.vignette {
+  grid-area: vignette;
+  align-self: start;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.titre {
+  grid-area: titre;
+  align-self: end;
+  font-size: var(--t-sous);
+  font-stretch: var(--large);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  transition: translate 0.45s var(--ease);
+}
+
+.details {
+  grid-area: details;
+  display: grid;
+  font-size: var(--t-petit);
+  line-height: 1.4;
+  color: var(--gris);
+}
+
+.nature {
+  color: var(--rouge);
+  font-weight: 600;
+}
+
+.date {
+  grid-area: date;
+  font-size: var(--t-petit);
+  color: var(--gris);
+}
+
+.ligne:focus-visible {
+  outline-offset: -2px;
+}
+
+.apercu {
+  display: none;
+}
+
+/* Ordinateur à la souris : une ligne par projet, la photo suit le curseur. */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .ligne {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 3fr) minmax(0, 2fr);
+    grid-template-areas: 'titre details date';
+    align-items: baseline;
+    column-gap: var(--gouttiere);
+    padding-block: var(--e-6);
+  }
+  .vignette {
+    display: none;
+  }
+  .titre {
+    align-self: baseline;
+    font-size: var(--t-grand);
+    line-height: 1;
+  }
+  .date {
+    text-align: right;
+  }
+
+  /* Repère rouge, comme sur la jauge : il se pose devant le titre survolé. */
+  .ligne::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--e-7));
+    top: 50%;
+    width: var(--e-5);
+    height: 2px;
+    background-color: var(--rouge);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s var(--ease);
+  }
+  .ligne:hover::before,
+  .ligne:focus-visible::before {
+    transform: scaleX(1);
+  }
+  .ligne:hover .titre,
+  .ligne:focus-visible .titre {
+    translate: 0.6rem 0;
+  }
+
+  /* Le projet survolé (ou atteint au clavier) reste seul au premier plan. */
+  .liste:has(.ligne:hover) .ligne:not(:hover):not(:focus-visible),
+  .liste:has(.ligne:focus-visible) .ligne:not(:focus-visible):not(:hover) {
+    opacity: 0.3;
+  }
+
+  .apercu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    pointer-events: none;
+    translate: 0 -50%;
+  }
+  .cadre {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background-color: var(--email-2);
+  }
+  /* L'image du projet survolé monte comme l'eau qui remplit le cadre. */
+  .image {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 0.55s var(--ease);
+  }
+  .image[data-actif] {
+    z-index: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ligne,
+  .titre,
+  .ligne::before,
+  .image {
+    transition: none;
+  }
+}

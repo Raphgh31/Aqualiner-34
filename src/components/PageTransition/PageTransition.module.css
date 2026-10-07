@@ -1,0 +1,12 @@
+.page {
+  position: relative;
+}
+
+.rideau {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  background-color: var(--fond);
+  pointer-events: none;
+  will-change: transform;
+}

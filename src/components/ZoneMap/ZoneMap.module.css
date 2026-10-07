@@ -1,0 +1,89 @@
+.carte {
+  margin: 0;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: inherit;
+}
+
+.mer {
+  fill: color-mix(in srgb, var(--eau) 12%, transparent);
+}
+
+.cote {
+  fill: none;
+  stroke: var(--eau);
+  stroke-width: 1.5;
+}
+
+.merNom {
+  fill: var(--eau-encre);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+/* Cercles de distance, comme des courbes de profondeur. */
+.anneau {
+  fill: none;
+  stroke: var(--gris);
+  stroke-width: 1;
+  stroke-dasharray: 2 5;
+  opacity: 0.6;
+}
+
+.distance {
+  fill: var(--gris);
+  font-size: 13px;
+}
+
+.principale circle,
+.commune circle {
+  fill: var(--ardoise);
+}
+
+.principale text {
+  fill: var(--ardoise);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.commune text {
+  fill: var(--gris);
+  font-size: 13px;
+}
+
+.commune[data-limite] circle {
+  fill: var(--email);
+  stroke: var(--ardoise);
+  stroke-width: 1.2;
+}
+
+.atelier rect {
+  fill: var(--rouge);
+}
+
+.atelier text {
+  fill: var(--rouge);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Téléphone : noms plus grands pour les communes principales, points seuls pour les autres (la liste complète suit en texte). */
+@media (max-width: 640px) {
+  .principale text,
+  .atelier text {
+    font-size: 25px;
+  }
+  .commune text {
+    display: none;
+  }
+  .distance {
+    font-size: 20px;
+  }
+  .merNom {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,12 @@
+.mot {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.interieur {
+  display: inline-block;
+  will-change: transform;
+}

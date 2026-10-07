@@ -1,0 +1,53 @@
+.signature {
+  padding-block: var(--e-section);
+  overflow: hidden;
+}
+
+.titre {
+  grid-column: 2 / span 6;
+}
+
+.texte {
+  grid-column: 2 / span 5;
+  margin-top: var(--e-6);
+  color: var(--encre-2);
+}
+
+.citation {
+  grid-column: 8 / span 5;
+  grid-row: 1 / span 2;
+  align-self: end;
+  display: grid;
+  gap: var(--e-3);
+  padding-left: var(--e-5);
+  border-left: 1px solid var(--trait);
+}
+
+.citation p {
+  font-size: var(--t-sous);
+  font-stretch: 112%;
+  font-weight: 450;
+  line-height: 1.25;
+}
+
+.citation cite {
+  font-style: normal;
+}
+
+.bande {
+  margin-top: var(--e-9);
+  max-width: var(--largeur-max);
+  margin-inline: auto;
+}
+
+@media (max-width: 1023px) {
+  .titre,
+  .texte,
+  .citation {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .citation {
+    margin-top: var(--e-7);
+  }
+}

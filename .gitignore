@@ -1,0 +1,13 @@
+node_modules
+dist
+*.local
+*.log
+.DS_Store
+
+# Originaux téléchargés par scripts/build-images.mjs
+.cache
+
+# Outils de session
+.playwright-mcp/
+.impeccable/review/
+.impeccable/live/

@@ -1,0 +1,142 @@
+.visionneuse {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--email);
+  overflow: hidden;
+}
+
+.visionneuse::backdrop {
+  background-color: var(--fond);
+}
+
+.contenu {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100%;
+  padding: var(--e-4) var(--marge) var(--e-5);
+  gap: var(--e-4);
+}
+
+.barre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.compteur {
+  font-size: var(--t-sous);
+  color: var(--eau);
+}
+
+.total {
+  margin-left: 0.25em;
+  color: var(--gris-fond);
+  font-size: 0.6em;
+}
+
+.fermer,
+.bouton {
+  display: inline-grid;
+  place-items: center;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0 var(--e-4);
+  border: 1px solid rgb(239 242 241 / 0.4);
+  background: transparent;
+  color: var(--email);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.25s var(--ease),
+    color 0.25s var(--ease);
+}
+
+.fermer:hover,
+.bouton:hover {
+  background-color: var(--email);
+  color: var(--ardoise);
+}
+
+.fermer:focus-visible,
+.bouton:focus-visible {
+  outline: 2px solid var(--eau);
+  outline-offset: 3px;
+}
+
+.scene {
+  position: relative;
+  display: grid;
+  min-height: 0;
+}
+
+.figure {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: var(--e-3);
+  min-height: 0;
+  margin: 0;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.figure:active {
+  cursor: grabbing;
+}
+
+.image {
+  min-height: 0;
+  background-color: transparent !important;
+}
+
+.image img {
+  object-fit: contain;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.legende {
+  color: var(--gris-fond);
+  max-width: 72ch;
+}
+
+.navigation {
+  display: flex;
+  gap: var(--e-3);
+}
+
+/* Téléphone : la photo à ses proportions, la légende juste dessous, l'ensemble centré dans la hauteur. */
+@media (max-width: 1023px) {
+  .figure {
+    grid-template-rows: auto auto;
+    align-content: center;
+  }
+  .image {
+    height: auto;
+  }
+  .image img {
+    height: auto;
+    max-height: 68dvh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contenu {
+    padding-block: var(--e-5) var(--e-6);
+  }
+  .navigation {
+    justify-content: flex-end;
+    margin-top: calc(-1 * (48px + var(--e-4)));
+  }
+  .legende {
+    max-width: 60ch;
+    padding-right: 160px;
+  }
+}

@@ -1,0 +1,141 @@
+.ouverture {
+  padding: calc(var(--hauteur-entete) + var(--e-9)) 0 var(--e-9);
+}
+
+.titre,
+.chapo {
+  grid-column: 1 / -1;
+}
+
+.titre {
+  max-width: 18ch;
+}
+
+.chapo {
+  margin-top: var(--e-5);
+  color: var(--gris);
+}
+
+.prestations {
+  padding-bottom: var(--e-section);
+}
+
+.liste {
+  grid-column: 1 / -1;
+  border-bottom: 3px double var(--joint);
+}
+
+/* Une prestation par rangée, séparées par une soudure. */
+.service {
+  display: grid;
+  gap: var(--e-4);
+  padding: var(--e-7) 0;
+  border-top: 3px double var(--joint);
+  scroll-margin-top: calc(var(--hauteur-entete) + var(--e-5));
+}
+
+.nom {
+  max-width: 18ch;
+}
+
+.contenu {
+  display: grid;
+  gap: var(--e-4);
+}
+
+.details {
+  display: grid;
+  gap: var(--e-2);
+  font-size: var(--t-petit);
+  color: var(--gris);
+}
+
+.details li::before {
+  content: '';
+  display: inline-block;
+  width: 0.75rem;
+  height: 2px;
+  margin-right: 0.55rem;
+  vertical-align: middle;
+  background-color: var(--rouge);
+}
+
+.image {
+  margin-top: var(--e-3);
+}
+
+.zone {
+  padding-block: var(--e-section);
+}
+
+.zoneTexte,
+.carte {
+  grid-column: 1 / -1;
+}
+
+.zoneTexte {
+  display: grid;
+  gap: var(--e-5);
+  align-content: start;
+}
+
+.carte {
+  margin-top: var(--e-7);
+  color: var(--email);
+  background-color: var(--email);
+  padding: var(--e-4);
+}
+
+.questions {
+  padding-block: var(--e-section);
+}
+
+.faqTitre,
+.faq {
+  grid-column: 1 / -1;
+}
+
+.faq {
+  margin-top: var(--e-7);
+}
+
+.action {
+  margin-top: var(--e-8);
+}
+
+@media (min-width: 1024px) {
+  .titre {
+    grid-column: 2 / span 8;
+  }
+  .chapo {
+    grid-column: 2 / span 6;
+  }
+  .liste {
+    grid-column: 2 / -1;
+  }
+  .service {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 3fr);
+    column-gap: var(--gouttiere);
+    align-items: start;
+  }
+  .image {
+    margin-top: 0;
+  }
+  .zoneTexte {
+    grid-column: 2 / span 4;
+    position: sticky;
+    top: calc(var(--hauteur-entete) + var(--e-6));
+    align-self: start;
+  }
+  .carte {
+    grid-column: 7 / -1;
+    margin-top: 0;
+  }
+  .faqTitre {
+    grid-column: 2 / span 4;
+  }
+  .faq {
+    grid-column: 6 / -1;
+    margin-top: 0;
+  }
+}

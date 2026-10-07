@@ -1,0 +1,21 @@
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.12em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.mot {
+  font-stretch: var(--large);
+  font-weight: 620;
+  letter-spacing: -0.035em;
+}
+
+.numero {
+  font-stretch: var(--etroite);
+  font-weight: 700;
+  font-variant-numeric: lining-nums;
+  color: var(--logo, var(--rouge));
+  letter-spacing: 0;
+}

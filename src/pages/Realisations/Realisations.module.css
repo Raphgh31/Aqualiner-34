@@ -1,0 +1,33 @@
+.ouverture {
+  padding: calc(var(--hauteur-entete) + var(--e-9)) 0 var(--e-10);
+}
+
+.titre {
+  grid-column: 1 / -1;
+}
+
+.chapo {
+  grid-column: 1 / -1;
+  margin-top: var(--e-5);
+  color: var(--gris);
+}
+
+.index {
+  grid-column: 1 / -1;
+  margin-top: var(--e-9);
+}
+
+@media (min-width: 1024px) {
+  .titre {
+    grid-column: 2 / span 7;
+  }
+  .chapo {
+    grid-column: 8 / -1;
+    align-self: end;
+    margin-top: 0;
+    padding-bottom: 0.4em;
+  }
+  .index {
+    grid-column: 2 / -1;
+  }
+}

@@ -1,0 +1,25 @@
+.couleur {
+  padding-block: var(--e-section);
+}
+
+.titre {
+  grid-column: 2 / span 7;
+}
+
+.texte {
+  grid-column: 2 / span 5;
+  margin-top: var(--e-5);
+}
+
+.outil {
+  grid-column: 2 / -1;
+  margin-top: var(--e-8);
+}
+
+@media (max-width: 1023px) {
+  .titre,
+  .texte,
+  .outil {
+    grid-column: 1 / -1;
+  }
+}
