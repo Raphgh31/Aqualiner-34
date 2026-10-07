@@ -47,7 +47,7 @@ export const projects: Project[] = [
         kind: 'annote',
         image: 'croix-occitane',
         notes: [
-          { x: 0.56, y: 0.67, label: 'Croix occitane : membrane claire soudée sur le fond', side: 'droite' },
+          { x: 0.464, y: 0.695, label: 'Croix occitane : membrane claire soudée sur le fond', side: 'droite' },
           { x: 0.5, y: 0.1, label: 'Banquette et marches habillées de membrane', side: 'droite' },
           { x: 0.235, y: 0.445, label: 'Skimmer', side: 'gauche' },
           { x: 0.8, y: 0.62, label: 'Margelle en pierre claire', side: 'droite' },

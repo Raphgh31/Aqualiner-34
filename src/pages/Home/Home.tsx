@@ -1,30 +1,34 @@
-import { useScroll } from 'motion/react'
-import { useRef } from 'react'
-import Nuancier from '../../components/Nuancier/Nuancier'
-import WaterHero from '../../components/WaterHero/WaterHero'
 import { useHeroTone } from '../../lib/layout'
 import { useSeo } from '../../lib/seo'
+import Atelier from './sections/Atelier'
+import Couleur from './sections/Couleur'
+import Geste from './sections/Geste'
+import Hero from './sections/Hero'
+import Manifeste from './sections/Manifeste'
+import Renover from './sections/Renover'
+import Selection from './sections/Selection'
+import Signature from './sections/Signature'
 
+/**
+ * L'accueil se lit comme une plongée : la surface (l'eau), la promesse (rénover), la main (le geste),
+ * les bassins, la signature, la couleur, puis les gens. Le pied de page est le fond.
+ */
 export default function Home() {
   useHeroTone('sombre')
   useSeo({
     description:
       'Rénovation et construction de piscines en membrane armée soudée sur place, autour de Béziers, Agde, Pézenas et Narbonne. Atelier fondé en 2008 à Abeilhan.',
   })
-  const sequence = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: sequence, offset: ['start start', 'end end'] })
   return (
     <>
-      <div ref={sequence} style={{ height: '260vh' }} data-sombre>
-        <div style={{ position: 'sticky', top: 0, height: '100svh' }}>
-          <WaterHero progress={scrollYProgress} />
-        </div>
-      </div>
-      <section className="grille" style={{ paddingBlock: 'var(--e-section)' }}>
-        <div style={{ gridColumn: '2 / -1' }}>
-          <Nuancier />
-        </div>
-      </section>
+      <Hero />
+      <Manifeste />
+      <Renover />
+      <Geste />
+      <Selection />
+      <Signature />
+      <Couleur />
+      <Atelier />
     </>
   )
 }

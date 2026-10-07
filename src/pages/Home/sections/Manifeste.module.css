@@ -1,0 +1,61 @@
+.manifeste {
+  padding-block: var(--e-section);
+}
+
+.enonce {
+  grid-column: 2 / span 9;
+  max-width: 22ch;
+}
+
+.texte {
+  grid-column: 2 / span 5;
+  display: grid;
+  gap: var(--e-5);
+  align-content: start;
+  justify-items: start;
+  margin-top: var(--e-9);
+}
+
+/* Fiche technique de la membrane : libellé, valeur, précision. */
+.fiche {
+  grid-column: 8 / span 5;
+  margin-top: var(--e-9);
+  border-top: 2px solid var(--ardoise);
+}
+
+.ligne {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--e-4);
+  padding: var(--e-4) 0;
+  border-bottom: 1px solid var(--joint);
+}
+
+.ligne dt {
+  font-size: var(--t-petit);
+  color: var(--gris);
+}
+
+.ligne dd {
+  margin: 0;
+  display: grid;
+  justify-items: end;
+  text-align: right;
+}
+
+.valeur {
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.3rem);
+}
+
+@media (max-width: 1023px) {
+  .enonce,
+  .texte,
+  .fiche {
+    grid-column: 1 / -1;
+  }
+  .texte,
+  .fiche {
+    margin-top: var(--e-7);
+  }
+}

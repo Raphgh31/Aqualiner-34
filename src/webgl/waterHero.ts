@@ -24,11 +24,12 @@ ${NOISE}
 ${WAVES}
 ${CAUSTICS}
 
-// Cadrage « cover » centré sur un point d'intérêt, avec zoom.
+// Cadrage « cover » comme object-position : le point d'intérêt reste à la même place à l'écran
+// pendant le zoom (la caméra avance vers lui).
 vec2 coverUv(vec2 uv, vec2 size, vec2 focus, float zoom) {
   float k = max(u_resolution.x / size.x, u_resolution.y / size.y);
   vec2 visible = u_resolution / (size * k) / zoom;
-  vec2 center = clamp(focus, visible * 0.5, 1.0 - visible * 0.5);
+  vec2 center = visible * 0.5 + (1.0 - visible) * focus;
   return center + (uv - 0.5) * visible;
 }
 

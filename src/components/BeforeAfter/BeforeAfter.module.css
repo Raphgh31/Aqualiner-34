@@ -1,0 +1,86 @@
+.comparaison {
+  display: grid;
+  gap: var(--e-3);
+}
+
+.cadre {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ardoise);
+  user-select: none;
+}
+
+.image,
+.avant {
+  position: absolute;
+  inset: 0;
+}
+
+.etiquette {
+  position: absolute;
+  top: var(--e-3);
+  padding: 0.3em 0.6em 0.35em;
+  background-color: var(--ardoise);
+  color: var(--email);
+  font-size: var(--t-petit);
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.gauche {
+  left: var(--e-3);
+}
+
+.droite {
+  right: var(--e-3);
+  background-color: var(--email);
+  color: var(--ardoise);
+}
+
+.separateur {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background-color: var(--email);
+  pointer-events: none;
+}
+
+.poignee {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  transform: translate(-50%, -50%);
+  background-color: var(--email);
+  color: var(--ardoise);
+  transition: transform 0.3s var(--ease);
+}
+
+.curseur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+
+.curseur:focus-visible + * {
+  outline: none;
+}
+
+.cadre:has(.curseur:focus-visible) {
+  outline: 2px solid var(--marque);
+  outline-offset: 3px;
+}
+
+.cadre:has(.curseur:active) .poignee {
+  transform: translate(-50%, -50%) scale(0.92);
+}

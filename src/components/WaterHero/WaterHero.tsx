@@ -3,16 +3,12 @@ import { useEffect, useRef, useState } from 'react'
 import { closestWidth, getMedia, mediaUrl } from '../../content/media'
 import { useReducedMotion } from '../../lib/useMediaQuery'
 import { loadImage } from '../../webgl/gl'
-import { heroState } from '../../webgl/heroState'
+import { FOCUS_CROSS, FOCUS_CROSS_PORTRAIT, FOCUS_STEPS, PORTRAIT_QUERY, heroState } from '../../webgl/heroState'
 import { canUseWebGL } from '../../webgl/support'
 import { createWaterHero, type WaterHero as Renderer } from '../../webgl/waterHero'
 import Img from '../Img/Img'
 import styles from './WaterHero.module.css'
 
-/** Centre de la croix dans la photo entière, puis dans le recadrage portrait. */
-const FOCUS_CROSS: [number, number] = [0.555, 0.69]
-const FOCUS_CROSS_PORTRAIT: [number, number] = [0.698, 0.69]
-const FOCUS_STEPS: [number, number] = [0.52, 0.5]
 
 const maskUrl = (id: string) => `${import.meta.env.BASE_URL}media/masque-${id}.png`
 
@@ -91,17 +87,13 @@ export default function WaterHero({ progress }: WaterHeroProps) {
 
   return (
     <div className={styles.eau}>
-      <div
-        className={styles.photo}
-        style={{ transform: `scale(${fallbackZoom})`, transformOrigin: `${FOCUS_CROSS[0] * 100}% ${FOCUS_CROSS[1] * 100}%` }}
-      >
+      <div className={styles.photo} style={{ transform: `scale(${fallbackZoom})` }}>
         <Img
           id="croix-occitane"
           sizes="100vw"
           priority
           imgRef={image}
-          art={[{ media: '(max-aspect-ratio: 4/5)', id: 'croix-occitane-portrait' }]}
-          position={`${FOCUS_CROSS[0] * 100}% 50%`}
+          art={[{ media: PORTRAIT_QUERY, id: 'croix-occitane-portrait' }]}
         />
       </div>
       <canvas ref={canvas} className={styles.canevas} data-pret={ready || undefined} aria-hidden="true" />

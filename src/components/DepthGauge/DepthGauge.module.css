@@ -2,7 +2,7 @@
   --couleur-jauge: var(--ardoise);
   --couleur-repere: var(--rouge);
   position: fixed;
-  left: max(10px, calc(var(--marge) * 0.32));
+  left: 18px;
   top: calc(var(--hauteur-entete) + 28px);
   bottom: 36px;
   z-index: 30;

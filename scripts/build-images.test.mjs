@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { exifDate, widthsFor } from './build-images.mjs'
+import { exifDate, provenanceRecord, widthsFor } from './build-images.mjs'
 
 describe('widthsFor', () => {
   test("garde les largeurs inférieures à la source et ajoute la largeur source", () => {
@@ -22,5 +22,20 @@ describe('exifDate', () => {
   test('renvoie null sans EXIF ou sans date', () => {
     expect(exifDate(undefined)).toBeNull()
     expect(exifDate(Buffer.from('rien ici'))).toBeNull()
+  })
+})
+
+describe('provenanceRecord', () => {
+  const now = new Date('2026-02-02T08:00:00.000Z')
+  test('garde la date d’un fichier régénéré depuis la même origine', () => {
+    const existing = { prompt: 'Origine : Photo de chantier', createdAt: '2026-01-01T00:00:00.000Z' }
+    expect(provenanceRecord(existing, 'Photo de chantier', now)).toEqual(existing)
+  })
+  test('date à nouveau un fichier dont l’origine change', () => {
+    const existing = { prompt: 'Origine : Ancienne origine', createdAt: '2026-01-01T00:00:00.000Z' }
+    expect(provenanceRecord(existing, 'Photo de chantier', now)).toEqual({ prompt: 'Origine : Photo de chantier', createdAt: '2026-02-02T08:00:00.000Z' })
+  })
+  test('date un fichier sans provenance existante', () => {
+    expect(provenanceRecord(null, 'Photo de chantier', now)).toEqual({ prompt: 'Origine : Photo de chantier', createdAt: '2026-02-02T08:00:00.000Z' })
   })
 })

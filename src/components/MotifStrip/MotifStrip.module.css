@@ -1,0 +1,81 @@
+.bande {
+  display: grid;
+  gap: var(--e-5);
+}
+
+.piste {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(240px, 26vw, 420px);
+  gap: var(--gouttiere);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--marge);
+  padding-inline: var(--marge);
+  padding-bottom: var(--e-3);
+  scrollbar-width: thin;
+  scrollbar-color: var(--gris-fond) transparent;
+  cursor: grab;
+}
+
+.piste:active {
+  cursor: grabbing;
+}
+
+.piste:focus-visible {
+  outline-offset: -2px;
+}
+
+.motif {
+  display: grid;
+  gap: var(--e-3);
+  scroll-snap-align: start;
+  user-select: none;
+}
+
+.image {
+  aspect-ratio: 4 / 5;
+}
+
+.image img {
+  pointer-events: none;
+}
+
+.motif figcaption {
+  display: grid;
+  gap: var(--e-1);
+}
+
+.titre {
+  font-weight: 600;
+  font-stretch: 112%;
+}
+
+.commandes {
+  display: flex;
+  gap: var(--e-2);
+  padding-inline: var(--marge);
+}
+
+.commandes button {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 44px;
+  border: 1px solid var(--trait);
+  border-radius: 2px;
+  background: none;
+  color: var(--encre);
+  transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.commandes button:hover {
+  border-color: currentColor;
+}
+
+@media (max-width: 767px) {
+  .piste {
+    grid-auto-columns: 78vw;
+  }
+}

@@ -1,0 +1,70 @@
+.atelier {
+  padding-block: var(--e-section);
+  background-color: var(--email-2);
+}
+
+.titre {
+  grid-column: 2 / span 8;
+  max-width: 20ch;
+}
+
+.recit {
+  grid-column: 2 / span 5;
+  display: grid;
+  gap: var(--e-5);
+  justify-items: start;
+  margin-top: var(--e-8);
+}
+
+.equipe {
+  grid-column: 8 / span 5;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gouttiere);
+  margin-top: var(--e-8);
+  align-self: end;
+}
+
+.portrait {
+  width: 100%;
+  max-width: 120px;
+  aspect-ratio: 4 / 5;
+  margin-bottom: var(--e-3);
+  filter: grayscale(1) contrast(1.05);
+}
+
+.nom {
+  font-weight: 600;
+  font-stretch: 112%;
+  line-height: 1.2;
+}
+
+@media (max-width: 1023px) {
+  .titre,
+  .recit,
+  .equipe {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Sur téléphone, une ligne par personne : le portrait à gauche, le nom en entier à droite. */
+@media (max-width: 640px) {
+  .equipe {
+    grid-template-columns: 1fr;
+    gap: var(--e-4);
+  }
+  .equipe li {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    column-gap: var(--e-4);
+    align-items: center;
+  }
+  .portrait {
+    grid-row: span 2;
+    margin-bottom: 0;
+  }
+  .nom {
+    align-self: end;
+  }
+}
+

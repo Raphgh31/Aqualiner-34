@@ -66,8 +66,17 @@ function cropBox(meta, crop) {
   }
 }
 
+/** Fiche de provenance ; une régénération depuis la même origine garde sa date de création. */
+export function provenanceRecord(existing, origin, now) {
+  const prompt = `Origine : ${origin}`
+  if (existing?.prompt === prompt && existing.createdAt) return existing
+  return { prompt, createdAt: now.toISOString() }
+}
+
 async function provenance(file, origin) {
-  await writeFile(`${file}.json`, JSON.stringify({ prompt: `Origine : ${origin}`, createdAt: new Date().toISOString() }, null, 2) + '\n')
+  const path = `${file}.json`
+  const existing = existsSync(path) ? JSON.parse(await readFile(path, 'utf8')) : null
+  await writeFile(path, JSON.stringify(provenanceRecord(existing, origin, new Date()), null, 2) + '\n')
 }
 
 async function buildEntry(entry, stamps) {

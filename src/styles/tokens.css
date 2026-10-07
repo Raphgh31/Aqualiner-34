@@ -76,6 +76,13 @@
   --hauteur-entete: 72px;
 }
 
+/* Sur grand écran, la jauge de profondeur occupe la marge gauche : le contenu commence après elle. */
+@media (min-width: 1024px) {
+  :root {
+    --marge: clamp(92px, 7vw, 120px);
+  }
+}
+
 /* Une section « profonde » : sol d'eau sombre, marquages turquoise. */
 .profond {
   --sol: var(--fond);

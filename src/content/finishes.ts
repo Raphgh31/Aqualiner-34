@@ -68,7 +68,7 @@ export const finishes: Finish[] = [
     water: 'Un bleu profond, presque minéral, qui reflète le ciel.',
     seen: [
       { image: 'croix-occitane', label: 'Croix occitane' },
-      { image: 'croix-occitane-escalier', label: 'Croix occitane' },
+      { image: 'croix-occitane-escalier', label: 'Le même bassin, depuis l’escalier' },
     ],
   },
   {

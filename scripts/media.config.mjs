@@ -85,7 +85,7 @@ export const MEDIA = [
     uri: '55988d_308b3df86ded46cf9412013634f9bb63~mv2.jpg',
     sizes: 'natif',
     date: null,
-    alt: 'La membrane posée, vue sous le même angle que le bassin vidé, château en arrière-plan.',
+    alt: 'La membrane posée, photographiée depuis le même coin que le bassin vidé, château en arrière-plan.',
   },
   {
     id: 'chateau-apres',

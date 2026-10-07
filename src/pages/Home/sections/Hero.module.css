@@ -1,0 +1,184 @@
+.sequence {
+  position: relative;
+  height: 260vh;
+  background-color: var(--fond);
+  color: var(--email);
+}
+
+.sequence[data-reduit] {
+  height: 100svh;
+}
+
+.scene {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.cadre {
+  position: absolute;
+  inset: 0;
+  will-change: clip-path;
+}
+
+/* Voile de lisibilité : en haut pour l'en-tête, en bas à gauche pour le texte. */
+.voile {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgb(12 33 43 / 0.55), rgb(12 33 43 / 0) 24%),
+    linear-gradient(to top, rgb(12 33 43 / 0.82), rgb(12 33 43 / 0.35) 38%, rgb(12 33 43 / 0) 62%),
+    linear-gradient(to right, rgb(12 33 43 / 0.45), rgb(12 33 43 / 0) 48%);
+}
+
+.ouverture {
+  position: absolute;
+  left: max(var(--marge), 64px);
+  right: var(--marge);
+  bottom: clamp(2rem, 6vh, 4.5rem);
+  display: grid;
+  gap: var(--e-6);
+  max-width: 980px;
+}
+
+.titre {
+  color: var(--email);
+}
+
+.suite {
+  display: grid;
+  gap: var(--e-5);
+}
+
+.chapo {
+  color: rgb(239 242 241 / 0.88);
+  max-width: 44ch;
+}
+
+.projet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-3);
+}
+
+.appel {
+  color: rgb(239 242 241 / 0.78);
+}
+
+.appel a {
+  color: var(--email);
+  font-weight: 600;
+  text-decoration-color: rgb(239 242 241 / 0.5);
+}
+
+/* Ligne de rappel posée sur la croix (sa position suit le cadrage du rendu). */
+.annotation {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.point {
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  border: 2px solid var(--email);
+  border-radius: 50%;
+  background-color: var(--rouge);
+}
+
+.trait {
+  width: clamp(80px, 12vw, 200px);
+  height: 1px;
+  background-color: var(--email);
+}
+
+.note {
+  padding: 0.4em 0.7em 0.45em;
+  background-color: var(--email);
+  color: var(--ardoise);
+  font-size: var(--t-petit);
+  font-weight: 550;
+  white-space: nowrap;
+}
+
+/*
+ * Les panneaux posés sur l'eau gardent un fond à 0,97 : en rendu logiciel, Chromium découpe à tort le canevas
+ * WebGL sous un grand aplat opaque (rectangle noir en miroir). Un fond non opaque n'est jamais traité en occultant.
+ * Le centrage passe par `translate`, que la propriété `transform` animée par Motion n'écrase pas.
+ */
+.detail {
+  position: absolute;
+  right: calc(var(--marge) + 6vw);
+  top: 50%;
+  width: min(30rem, 34vw);
+  padding: var(--e-5) var(--e-6) var(--e-6);
+  background-color: rgb(19 48 61 / 0.97);
+  color: var(--email);
+  translate: 0 -50%;
+}
+
+.large {
+  position: absolute;
+  left: max(var(--marge), 64px);
+  bottom: clamp(2rem, 6vh, 4.5rem);
+  display: grid;
+  gap: var(--e-3);
+  max-width: 34rem;
+  padding: var(--e-5) var(--e-6) var(--e-6);
+  background-color: rgb(19 48 61 / 0.97);
+}
+
+.large:focus-within {
+  opacity: 1 !important;
+}
+
+.precision {
+  margin-top: var(--e-2);
+  color: var(--gris-fond);
+}
+
+@media (max-width: 1023px) {
+  .sequence {
+    height: 210vh;
+  }
+  .annotation {
+    display: none;
+  }
+  .ouverture {
+    left: var(--marge);
+    bottom: calc(var(--e-6) + env(safe-area-inset-bottom));
+    gap: var(--e-5);
+  }
+  .detail {
+    left: var(--marge);
+    right: var(--marge);
+    top: auto;
+    bottom: var(--e-7);
+    width: auto;
+    translate: none;
+  }
+  .large {
+    left: var(--marge);
+    right: var(--marge);
+  }
+  .voile {
+    background:
+      linear-gradient(to bottom, rgb(12 33 43 / 0.6), rgb(12 33 43 / 0) 22%),
+      linear-gradient(to top, rgb(12 33 43 / 0.9), rgb(12 33 43 / 0.45) 52%, rgb(12 33 43 / 0) 78%);
+  }
+}
+
+@media (max-width: 520px) {
+  .projet {
+    display: grid;
+  }
+  .projet > * {
+    justify-content: space-between;
+  }
+}

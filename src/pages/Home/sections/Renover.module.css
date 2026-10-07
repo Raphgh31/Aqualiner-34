@@ -1,0 +1,27 @@
+.renover {
+  padding-block: var(--e-section);
+  background-color: var(--email-2);
+}
+
+.texte {
+  grid-column: 2 / span 4;
+  display: grid;
+  gap: var(--e-5);
+  align-content: center;
+  justify-items: start;
+}
+
+.comparaison {
+  grid-column: 7 / span 6;
+  max-width: 760px;
+}
+
+@media (max-width: 1023px) {
+  .texte,
+  .comparaison {
+    grid-column: 1 / -1;
+  }
+  .comparaison {
+    margin-top: var(--e-7);
+  }
+}

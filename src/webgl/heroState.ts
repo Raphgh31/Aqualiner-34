@@ -1,3 +1,10 @@
+/** Points d'intérêt (fractions de l'image) : centre de la croix (photo entière, recadrage portrait), angle de l'escalier. */
+export const FOCUS_CROSS: [number, number] = [0.464, 0.695]
+export const FOCUS_CROSS_PORTRAIT: [number, number] = [0.486, 0.695]
+export const FOCUS_STEPS: [number, number] = [0.52, 0.5]
+/** Au-delà de ce rapport largeur/hauteur, le recadrage portrait est servi. */
+export const PORTRAIT_QUERY = '(max-aspect-ratio: 4/5)'
+
 export type HeroState = {
   /** Zoom sur la première photo (la croix). */
   zoom0: number
