@@ -1,0 +1,72 @@
+.blocs {
+  display: grid;
+  gap: var(--e-10);
+  padding-bottom: var(--e-section);
+}
+
+.photo {
+  display: grid;
+  gap: var(--e-3);
+  margin: 0;
+  width: 100%;
+}
+
+.plein {
+  grid-column: 1 / -1;
+}
+
+.texte {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--e-4);
+}
+
+.paire {
+  row-gap: var(--e-6);
+}
+
+.premiere,
+.seconde,
+.image,
+.recit {
+  grid-column: 1 / -1;
+}
+
+.decale {
+  row-gap: var(--e-5);
+}
+
+@media (min-width: 1024px) {
+  .plein {
+    grid-column: 2 / -1;
+  }
+  .texte {
+    grid-column: 2 / span 6;
+  }
+
+  /* La paire est décalée : la seconde photo, plus petite, descend d'un cran. */
+  .premiere {
+    grid-column: 1 / span 7;
+  }
+  .seconde {
+    grid-column: 8 / -1;
+    margin-top: var(--e-10);
+  }
+
+  .decale[data-cote='gauche'] .image {
+    grid-column: 1 / span 7;
+  }
+  .decale[data-cote='gauche'] .recit {
+    grid-column: 9 / -1;
+    align-self: center;
+  }
+  .decale[data-cote='droite'] .image {
+    grid-column: 6 / -1;
+    grid-row: 1;
+  }
+  .decale[data-cote='droite'] .recit {
+    grid-column: 2 / span 3;
+    grid-row: 1;
+    align-self: center;
+  }
+}

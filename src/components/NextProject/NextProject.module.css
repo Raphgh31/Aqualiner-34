@@ -1,0 +1,106 @@
+.suivant {
+  padding-block: var(--e-9) var(--e-8);
+}
+
+.lien {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Mobile et petites photos : la photo à ses proportions. */
+.cadre {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ardoise);
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+}
+
+.plaque {
+  position: absolute;
+  top: var(--e-4);
+  left: var(--marge);
+  padding: 0.35em 0.65em 0.4em;
+  background-color: var(--email);
+  color: var(--ardoise);
+  font-size: var(--t-petit);
+  font-weight: 600;
+  transition:
+    background-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+}
+
+.lien:hover .plaque,
+.lien:focus-visible .plaque {
+  background-color: var(--rouge);
+  color: var(--email);
+}
+
+.texte {
+  display: grid;
+  gap: var(--e-4);
+  padding: var(--e-6) var(--marge) 0;
+}
+
+.titre {
+  max-width: 18ch;
+  transition: translate 0.45s var(--ease);
+}
+
+.lien:hover .titre {
+  translate: 0.4rem 0;
+}
+
+.resume {
+  color: var(--gris-fond);
+}
+
+.lien:focus-visible {
+  outline: none;
+}
+
+.lien:focus-visible .cadre {
+  outline: 2px solid var(--eau);
+  outline-offset: 4px;
+}
+
+@media (min-width: 1024px) {
+  .cadre {
+    margin-inline: var(--marge);
+  }
+  .plaque {
+    left: var(--e-5);
+    top: var(--e-5);
+  }
+
+  /*
+   * Fenêtre : la photo est posée en plein écran derrière la page (position fixe) et le cadre la découpe
+   * (clip-path découpe aussi les descendants fixes). Au clic, seule la découpe s'agrandit.
+   */
+  .cadre[data-fenetre] {
+    aspect-ratio: auto !important;
+    height: min(66vh, 680px);
+    clip-path: inset(0);
+  }
+  .cadre[data-fenetre] .photo {
+    position: fixed;
+  }
+
+  /* Petite photo : à sa taille, sans agrandissement. */
+  .cadre[data-petite] {
+    width: min(640px, calc(100% - 2 * var(--marge)));
+  }
+
+  .texte {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    align-items: end;
+    column-gap: var(--gouttiere);
+  }
+  .resume {
+    margin-bottom: 0.4em;
+  }
+}

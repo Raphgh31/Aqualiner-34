@@ -5,7 +5,7 @@ import { finishes } from './finishes'
 import { formatMonthYear } from './format'
 import { allMedia } from './media'
 import { motifs } from './motifs'
-import { getNextProject, getProject, projectMedia, projects } from './projects'
+import { getNextProject, getProject, projectFacts, projectMedia, projects } from './projects'
 import { services } from './services'
 import { timeline } from './timeline'
 
@@ -24,6 +24,12 @@ describe('projets', () => {
     expect(getNextProject(projects[0].slug).slug).toBe(projects[1].slug)
   })
 
+  test('aucune fiche ne répète la photo de son hero dans ses blocs', () => {
+    for (const project of projects) {
+      const images = project.blocks.flatMap((block) => (block.kind === 'paire' ? block.images : block.kind === 'texte' ? [] : [block.image]))
+      expect(images, project.slug).not.toContain(project.cover)
+    }
+  })
   test('un slug inconnu ne renvoie aucun projet', () => {
     expect(getProject('inconnu')).toBeUndefined()
   })
@@ -77,3 +83,21 @@ describe('formatMonthYear', () => {
     expect(formatMonthYear(null)).toBeNull()
   })
 })
+
+describe('projectFacts', () => {
+  test('affiche « À préciser » pour toute information inconnue', () => {
+    const nuit = getProject('nuit-turquoise')!
+    expect(projectFacts(nuit)).toEqual([
+      { label: 'Nature des travaux', value: 'À préciser', known: false },
+      { label: 'Commune', value: 'À préciser', known: false },
+      { label: 'Finition', value: 'À préciser', known: false },
+      { label: 'Photographié', value: 'À préciser', known: false },
+    ])
+  })
+  test('reprend les informations connues, mois en tête de ligne', () => {
+    const croix = getProject('croix-occitane')!
+    expect(projectFacts(croix)).toContainEqual({ label: 'Finition', value: 'Membrane armée anthracite', known: true })
+    expect(projectFacts(croix)).toContainEqual({ label: 'Photographié', value: 'Juillet 2018', known: true })
+  })
+})
+

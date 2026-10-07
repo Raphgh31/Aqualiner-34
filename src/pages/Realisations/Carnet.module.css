@@ -1,0 +1,78 @@
+.carnet {
+  padding-block: var(--e-10) var(--e-section);
+  background-color: var(--email-2);
+}
+
+.entete {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--e-5);
+  max-width: 46rem;
+}
+
+/* Planche contact : des rangées d'égale hauteur, chaque photo à ses proportions. */
+.planche {
+  /* Deux photos par rangée sur téléphone. */
+  --rang: 92px;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  margin-top: var(--e-8);
+}
+
+.planche > li {
+  min-width: 0;
+}
+
+/* Empêche la dernière rangée de s'étirer. */
+.fin {
+  flex-grow: 10;
+  flex-basis: 0;
+}
+
+.vignette {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  overflow: hidden;
+}
+
+.vignette :global(img) {
+  transition: transform 0.6s var(--ease);
+}
+
+.vignette:hover :global(img) {
+  transform: scale(1.03);
+}
+
+.vignette:focus-visible {
+  outline: 2px solid var(--marque);
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .planche {
+    --rang: 170px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .entete {
+    grid-column: 2 / span 7;
+  }
+  .planche {
+    --rang: 210px;
+    grid-column: 2 / -1;
+    gap: var(--e-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vignette :global(img) {
+    transition: none;
+  }
+}

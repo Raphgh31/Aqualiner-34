@@ -1,7 +1,6 @@
-import { useMotionValueEvent, useScroll } from 'motion/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router'
-import { formatDepth } from '../../lib/depth'
+import { depthAt, formatDepth } from '../../lib/depth'
 import styles from './DepthGauge.module.css'
 
 /** Profondeur atteinte en bas de page, en mètres. */
@@ -13,7 +12,6 @@ const TICKS = Array.from({ length: Math.round(MAX_DEPTH * 10) + 1 }, (_, i) => i
  * Rouge près de la surface, turquoise au-dessus des sections profondes (le rouge disparaît sous l'eau).
  */
 export default function DepthGauge() {
-  const { scrollYProgress } = useScroll()
   const [depth, setDepth] = useState(0)
   const [deep, setDeep] = useState(false)
   const marker = useRef<HTMLDivElement>(null)
@@ -27,21 +25,32 @@ export default function DepthGauge() {
     setDeep(Boolean(under?.closest('.profond, .ardoise, [data-sombre]')))
   }, [])
 
-  useMotionValueEvent(scrollYProgress, 'change', (progress) => {
-    setDepth(progress * MAX_DEPTH)
+  const measure = useCallback(() => {
+    const root = document.documentElement
+    setDepth(depthAt(window.scrollY, root.scrollHeight, window.innerHeight, MAX_DEPTH))
     readGround()
-  })
+  }, [readGround])
+
+  // Au défilement, et quand la hauteur de la page change (page chargée, images, rideau).
+  useEffect(() => {
+    measure()
+    window.addEventListener('scroll', measure, { passive: true })
+    window.addEventListener('resize', measure)
+    const observer = new ResizeObserver(measure)
+    observer.observe(document.body)
+    return () => {
+      window.removeEventListener('scroll', measure)
+      window.removeEventListener('resize', measure)
+      observer.disconnect()
+    }
+  }, [measure])
 
   useEffect(() => {
     // Après le changement de page (et la fin du rideau), relire le fond.
-    const timer = window.setTimeout(readGround, 900)
-    readGround()
-    window.addEventListener('resize', readGround)
-    return () => {
-      window.clearTimeout(timer)
-      window.removeEventListener('resize', readGround)
-    }
-  }, [pathname, readGround])
+    const timer = window.setTimeout(measure, 900)
+    measure()
+    return () => window.clearTimeout(timer)
+  }, [pathname, measure])
 
   return (
     <div className={styles.jauge} data-profond={deep || undefined} aria-hidden="true">

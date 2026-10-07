@@ -1,3 +1,4 @@
+import { A_PRECISER, formatMonthYear } from './format'
 import type { MediaId } from './media'
 
 /** Repère posé sur une photo : x et y en fractions de l'image. */
@@ -26,7 +27,7 @@ export type Project = {
   /** Date de prise de vue (EXIF) ; null si inconnue. */
   photographed: string | null
   blocks: ProjectBlock[]
-  beforeAfter?: { before: MediaId; after: MediaId; caption: string }
+  beforeAfter?: { before: MediaId; after: MediaId; caption: string; labels?: [string, string]; initial?: number }
 }
 
 export const projects: Project[] = [
@@ -44,24 +45,19 @@ export const projects: Project[] = [
     photographed: '2018-07-31',
     blocks: [
       {
-        kind: 'annote',
-        image: 'croix-occitane',
-        notes: [
-          { x: 0.464, y: 0.695, label: 'Croix occitane : membrane claire soudée sur le fond', side: 'droite' },
-          { x: 0.5, y: 0.1, label: 'Banquette et marches habillées de membrane', side: 'droite' },
-          { x: 0.235, y: 0.445, label: 'Skimmer', side: 'gauche' },
-          { x: 0.8, y: 0.62, label: 'Margelle en pierre claire', side: 'droite' },
-        ],
-        caption: 'Vue d’ensemble, juillet 2018.',
-      },
-      {
         kind: 'texte',
         title: 'Une eau couleur d’ardoise',
         text: 'Une membrane sombre change la couleur de l’eau : au lieu du bleu lagon, un bleu profond qui renvoie le ciel et le jardin. La croix claire ressort d’autant mieux.',
       },
       {
-        kind: 'plein',
+        kind: 'annote',
         image: 'croix-occitane-escalier',
+        notes: [
+          { x: 0.52, y: 0.34, label: 'Banquette immergée', side: 'droite' },
+          { x: 0.3, y: 0.6, label: 'Marches dans la même membrane', side: 'droite' },
+          { x: 0.17, y: 0.78, label: 'Margelle en pierre claire', side: 'droite' },
+          { x: 0.66, y: 0.66, label: 'Membrane anthracite', side: 'droite' },
+        ],
         caption: 'Le même bassin depuis l’angle de l’escalier : banquette et marches dans la même membrane, sans rupture de teinte.',
       },
     ],
@@ -81,7 +77,10 @@ export const projects: Project[] = [
     beforeAfter: {
       before: 'chateau-avant',
       after: 'chateau-pose',
-      caption: 'Le bassin vidé, puis la membrane posée, avant la mise en eau.',
+      labels: ['Avant', 'Membrane posée'],
+      caption: 'Le bassin vidé, puis la membrane posée avant la mise en eau, photographiés depuis le même coin.',
+      // Les deux photos ne sont pas prises exactement du même point : à 30 %, le château n'apparaît qu'une fois.
+      initial: 30,
     },
     blocks: [
       {
@@ -90,11 +89,9 @@ export const projects: Project[] = [
         caption: 'L’ancien revêtement, puis la membrane bleu foncé sur le fond et les parois.',
       },
       {
-        kind: 'decale',
-        image: 'chateau-apres',
-        side: 'droite',
+        kind: 'texte',
+        title: 'Après la mise en eau',
         text: 'Une fois rempli, le bassin retrouve sa place dans le parc. La membrane foncée donne à l’eau un bleu soutenu, en accord avec les arbres et la pierre du château.',
-        caption: 'Après la mise en eau.',
       },
     ],
   },
@@ -121,7 +118,6 @@ export const projects: Project[] = [
         ],
         caption: 'Le bassin vu depuis la terrasse, avril 2022.',
       },
-      { kind: 'plein', image: 'gecko-tonneaux', caption: 'La terrasse et ses tonneaux.' },
       {
         kind: 'decale',
         image: 'gecko-tonneaux-nuit',
@@ -144,7 +140,6 @@ export const projects: Project[] = [
     features: ['Bassin long et étroit', 'Marches sur toute la largeur', 'Margelles au ras de la pelouse'],
     photographed: '2018-06-28',
     blocks: [
-      { kind: 'plein', image: 'couloir', caption: 'Juin 2018.' },
       {
         kind: 'decale',
         image: 'couloir-plage',
@@ -178,11 +173,9 @@ export const projects: Project[] = [
       },
       { kind: 'paire', images: ['angle-vide', 'angle-pose'], caption: 'Le bassin vidé, puis les premiers lés sur les parois.' },
       {
-        kind: 'decale',
-        image: 'angle-apres',
-        side: 'droite',
-        text: 'Remis en eau, le bassin garde sa forme et son escalier. Seule l’étanchéité a changé, et avec elle la couleur de l’eau.',
-        caption: 'Après la remise en eau.',
+        kind: 'texte',
+        title: 'Remis en eau',
+        text: 'Le bassin garde sa forme et son escalier. Seule l’étanchéité a changé, et avec elle la couleur de l’eau.',
       },
       { kind: 'paire', images: ['angle-reflets', 'angle-fontaine'] },
     ],
@@ -199,7 +192,7 @@ export const projects: Project[] = [
     finish: null,
     features: ['Forme libre', 'Escalier immergé', 'Éclairage du bassin'],
     photographed: null,
-    blocks: [{ kind: 'plein', image: 'nuit-turquoise' }],
+    blocks: [],
   },
   {
     slug: 'escalier-roman',
@@ -214,7 +207,6 @@ export const projects: Project[] = [
     features: ['Escalier roman en demi-cercle', 'Bouts arrondis', 'Margelles couleur sable'],
     photographed: '2018-06-27',
     blocks: [
-      { kind: 'plein', image: 'roman', caption: 'Juin 2018.' },
       {
         kind: 'decale',
         image: 'roman-bassin',
@@ -235,7 +227,7 @@ export const projects: Project[] = [
     finish: 'Membrane sombre',
     features: ['Jets d’eau', 'Éclairage du bassin', 'Ruban lumineux en bordure'],
     photographed: '2018-04-15',
-    blocks: [{ kind: 'paire', images: ['nocturne-jour', 'nocturne'], caption: 'Le 15 avril 2018, en début d’après-midi puis à 22 heures.' }],
+    blocks: [{ kind: 'plein', image: 'nocturne-jour', caption: 'Le même bassin, le 15 avril 2018 en début d’après-midi. En ouverture, à 22 heures.' }],
   },
   {
     slug: 'bleu-profond',
@@ -248,7 +240,7 @@ export const projects: Project[] = [
     finish: 'Membrane armée bleu foncé',
     features: ['Escalier roman immergé', 'Motif clair au fond', 'Échelle inox'],
     photographed: '2018-06-04',
-    blocks: [{ kind: 'paire', images: ['bleu', 'bleu-escalier'], caption: 'Juin 2018.' }],
+    blocks: [{ kind: 'plein', image: 'bleu-escalier', caption: 'L’escalier roman immergé, juin 2018.' }],
   },
 ]
 
@@ -300,3 +292,18 @@ export function projectMedia(project: Project): MediaId[] {
   if (project.beforeAfter) ids.push(project.beforeAfter.before, project.beforeAfter.after)
   return ids
 }
+
+export type Fact = { label: string; value: string; known: boolean }
+
+/** Fiche d'un projet : toute information que le client n'a pas encore donnée s'affiche « À préciser ». */
+export function projectFacts(project: Project): Fact[] {
+  const date = formatMonthYear(project.photographed)
+  const rows: [string, string | null][] = [
+    ['Nature des travaux', project.nature],
+    ['Commune', project.commune],
+    ['Finition', project.finish],
+    ['Photographié', date && date.charAt(0).toUpperCase() + date.slice(1)],
+  ]
+  return rows.map(([label, value]) => ({ label, value: value ?? A_PRECISER, known: value !== null }))
+}
+
