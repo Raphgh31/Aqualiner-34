@@ -11,7 +11,7 @@
   border-radius: 2px;
   background-color: var(--fond-plaque);
   color: var(--texte-plaque);
-  font-size: 1rem;
+  font-size: var(--t-ui);
   font-stretch: 112%;
   font-weight: 600;
   line-height: 1.1;
@@ -65,7 +65,7 @@
 .petite {
   min-height: 44px;
   padding: 0.65em 1.05em 0.7em;
-  font-size: 0.94rem;
+  font-size: var(--t-petit);
 }
 
 .libelle {

@@ -27,9 +27,13 @@ export default function Header() {
     last.current = y
   })
 
+  // Au changement de page, l'en-tête réapparaît ; sa position est relue une fois la page placée.
   useEffect(() => {
-    setHidden(false)
-    setSolid(window.scrollY > 8 && tone === 'clair')
+    const frame = requestAnimationFrame(() => {
+      setHidden(false)
+      setSolid(window.scrollY > 8 && tone === 'clair')
+    })
+    return () => cancelAnimationFrame(frame)
   }, [pathname, tone])
 
   useEffect(() => setMenuOpen(false), [pathname, setMenuOpen])
@@ -45,8 +49,9 @@ export default function Header() {
         data-cache={(hidden && !menuOpen) || undefined}
       >
         <div className={styles.barre}>
-          <Link to="/" className={styles.marque} aria-label="Aqualiner 34, accueil">
+          <Link to="/" className={styles.marque}>
             <Wordmark />
+            <span className="visuellement-cache">, retour à l’accueil</span>
           </Link>
 
           <nav className={styles.nav} aria-label="Navigation principale">

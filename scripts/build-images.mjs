@@ -143,6 +143,18 @@ async function buildMask(mask) {
   return files
 }
 
+/** Image de partage (Open Graph, 1200 × 630) : la croix occitane, recadrée autour du motif. */
+async function buildShareImage() {
+  const entry = MEDIA.find((m) => m.id === 'croix-occitane')
+  const input = await source(entry)
+  const meta = await sharp(input).metadata()
+  const height = Math.round((meta.width * 630) / 1200)
+  const top = Math.max(0, Math.min(meta.height - height, Math.round(meta.height * 0.695 - height / 2)))
+  const out = join(ROOT, 'public', 'og.jpg')
+  await sharp(input).rotate().extract({ left: 0, top, width: meta.width, height }).resize(1200, 630).jpeg({ quality: 82, mozjpeg: true }).toFile(out)
+  await provenance(out, `${entry.origin} (photo « ${entry.id} », recadrée pour le partage)`)
+}
+
 async function main() {
   await mkdir(CACHE, { recursive: true })
   await mkdir(OUT, { recursive: true })
@@ -160,6 +172,7 @@ async function main() {
     process.stdout.write(`${entry.id} ${record.widths.join('/')}\n`)
   }
   for (const mask of MASKS) (await buildMask(mask)).forEach((f) => keep.add(f))
+  await buildShareImage()
 
   for (const name of await readdir(OUT)) {
     const file = join(OUT, name)

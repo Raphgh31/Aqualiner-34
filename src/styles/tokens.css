@@ -16,12 +16,13 @@
   --email-2: #e3e8e7;        /* émail dans l'ombre d'une margelle */
   --ardoise: #232a30;        /* membrane ardoise / anthracite, à sec */
   --fond: #13303d;           /* membrane anthracite vue sous 1,5 m d'eau */
-  --fond-2: #0e2530;
   --gris: #5a6369;
   --gris-fond: #9fb0b6;      /* texte secondaire sur fond profond */
   --rouge: #c42b2e;          /* chiffres de profondeur, rouge du logo */
-  --rouge-vif: #d8383b;
+  --rouge-clair: #f56b6e;     /* le rouge du logo, lisible sur fond profond (4,7:1) */
   --eau: #5cc9c6;            /* le rouge disparaît sous l'eau : les marquages profonds sont turquoise */
+  --eau-encre: #047270;      /* turquoise lisible en texte sur émail (5,1:1) */
+  --voile: #0c212b;          /* eau la plus profonde : voile de lisibilité posé sur les photos */
   --joint: #c9d1d0;          /* joints et lignes de soudure sur émail */
   --joint-fond: rgb(239 242 241 / 0.16);
 
@@ -31,6 +32,7 @@
   --encre-2: var(--gris);
   --marque: var(--rouge);
   --trait: var(--joint);
+  --logo: var(--rouge);
 
   /* Typographie : Archivo en trois largeurs */
   --police: 'Archivo', ui-sans-serif, system-ui, sans-serif;
@@ -40,13 +42,17 @@
 
   --t-hero: clamp(3rem, 1.6rem + 4.4vw, 6rem);
   --t-titre: clamp(2.4rem, 1.5rem + 3vw, 4.4rem);
+  --t-grand: clamp(2.2rem, 1.6rem + 2vw, 3.4rem);   /* numéros de téléphone, noms de l'index */
+  --t-menu: clamp(2.1rem, 9vw, 3.4rem);             /* liens du menu mobile, à la largeur de l'écran */
   --t-section: clamp(1.9rem, 1.35rem + 1.9vw, 3.1rem);
+  --t-valeur: clamp(1.6rem, 1.3rem + 1vw, 2.3rem);  /* valeurs mises en avant */
   --t-sous: clamp(1.3rem, 1.12rem + 0.7vw, 1.75rem);
   --t-chapo: clamp(1.18rem, 1.06rem + 0.45vw, 1.42rem);
   --t-texte: clamp(1.0625rem, 1.02rem + 0.15vw, 1.125rem);
+  --t-ui: 1rem;              /* plaques et navigation */
   --t-petit: 0.9rem;
-  --t-mini: 0.8rem;
-  --t-mesure: clamp(2.8rem, 1.8rem + 3.6vw, 5.6rem); /* chiffres de profondeur */
+  --t-note: 0.78rem;         /* repères, annotations, étiquette du curseur */
+  --t-graduation: 0.66rem;   /* graduations de la jauge */
 
   /* Espace (base 4 px) */
   --e-1: 0.25rem;
@@ -90,6 +96,7 @@
   --encre-2: var(--gris-fond);
   --marque: var(--eau);
   --trait: var(--joint-fond);
+  --logo: var(--rouge-clair);
   background-color: var(--sol);
   color: var(--encre);
 }
@@ -100,6 +107,7 @@
   --encre-2: var(--gris-fond);
   --marque: var(--eau);
   --trait: var(--joint-fond);
+  --logo: var(--rouge-clair);
   background-color: var(--sol);
   color: var(--encre);
 }

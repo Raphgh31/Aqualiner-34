@@ -67,7 +67,7 @@
   padding: 0.3rem 0.85rem 0.3rem 0.3rem;
   border: 1px solid var(--joint);
   border-radius: 2px;
-  font-size: 0.94rem;
+  font-size: var(--t-petit);
   cursor: pointer;
   transition:
     border-color 0.3s var(--ease),
@@ -96,7 +96,8 @@
   height: 34px;
   border-radius: 2px;
   overflow: hidden;
-  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.08);
+  outline: 1px solid color-mix(in srgb, var(--ardoise) 10%, transparent);
+  outline-offset: -1px;
 }
 
 .libelle {

@@ -30,7 +30,7 @@
 }
 
 .compteur {
-  font-size: 1.6rem;
+  font-size: var(--t-sous);
   color: var(--eau);
 }
 

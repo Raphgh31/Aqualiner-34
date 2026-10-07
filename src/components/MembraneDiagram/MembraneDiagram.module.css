@@ -18,7 +18,7 @@
 }
 
 .fils line {
-  stroke: #b3bfc1;
+  stroke: var(--gris-fond);
   stroke-width: 0.8;
 }
 

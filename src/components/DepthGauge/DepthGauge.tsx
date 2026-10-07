@@ -33,12 +33,13 @@ export default function DepthGauge() {
 
   // Au défilement, et quand la hauteur de la page change (page chargée, images, rideau).
   useEffect(() => {
-    measure()
+    const first = requestAnimationFrame(measure)
     window.addEventListener('scroll', measure, { passive: true })
     window.addEventListener('resize', measure)
     const observer = new ResizeObserver(measure)
     observer.observe(document.body)
     return () => {
+      cancelAnimationFrame(first)
       window.removeEventListener('scroll', measure)
       window.removeEventListener('resize', measure)
       observer.disconnect()
@@ -47,9 +48,12 @@ export default function DepthGauge() {
 
   useEffect(() => {
     // Après le changement de page (et la fin du rideau), relire le fond.
+    const frame = requestAnimationFrame(measure)
     const timer = window.setTimeout(measure, 900)
-    measure()
-    return () => window.clearTimeout(timer)
+    return () => {
+      cancelAnimationFrame(frame)
+      window.clearTimeout(timer)
+    }
   }, [pathname, measure])
 
   return (

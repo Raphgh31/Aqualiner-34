@@ -16,6 +16,6 @@
   font-stretch: var(--etroite);
   font-weight: 700;
   font-variant-numeric: lining-nums;
-  color: var(--rouge);
+  color: var(--logo, var(--rouge));
   letter-spacing: 0;
 }

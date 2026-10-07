@@ -16,7 +16,7 @@
 .lien {
   display: inline-block;
   padding-block: 0.2em;
-  font-size: clamp(2.1rem, 9vw, 3.4rem);
+  font-size: var(--t-menu);
   font-stretch: var(--large);
   font-weight: 500;
   line-height: 1.05;
@@ -43,7 +43,7 @@
 }
 
 .telephone {
-  font-size: 2rem;
+  font-size: var(--t-section);
   font-stretch: var(--etroite);
   font-weight: 650;
   font-variant-numeric: tabular-nums;

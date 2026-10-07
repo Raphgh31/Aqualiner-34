@@ -22,6 +22,12 @@ type ImgProps = {
   onLoad?: (image: HTMLImageElement) => void
 }
 
+/** Transmet le nœud à une ref fournie par le parent, fonction ou objet. */
+function setRef<T>(ref: Ref<T> | undefined, node: T | null) {
+  if (typeof ref === 'function') ref(node)
+  else if (ref) (ref as RefObject<T | null>).current = node
+}
+
 export default function Img({ id, sizes, priority, className, alt, position, art = [], intrinsic, imgRef, onLoad }: ImgProps) {
   const media = getMedia(id)
   const [loaded, setLoaded] = useState(Boolean(priority))
@@ -31,8 +37,7 @@ export default function Img({ id, sizes, priority, className, alt, position, art
   const attach = useCallback(
     (node: HTMLImageElement | null) => {
       if (node?.complete && node.naturalWidth > 0) setLoaded(true)
-      if (typeof imgRef === 'function') imgRef(node)
-      else if (imgRef) (imgRef as RefObject<HTMLImageElement | null>).current = node
+      setRef(imgRef, node)
     },
     [imgRef],
   )

@@ -24,7 +24,7 @@ export default function Geste() {
           <h2 id="geste-titre" className="titre-section">
             Soudé à l’air chaud, lé après lé.
           </h2>
-          <p className={`chapo ${styles.chapo}`}>Du diagnostic à la mise en eau, cinq étapes que l’équipe mène elle-même.</p>
+          <p className={`chapo ${styles.chapo}`}>Du diagnostic à la mise en eau, cinq étapes.</p>
           <ProcessSteps steps={steps} />
           <p className={styles.duree}>
             Remplacement d’une étanchéité : <span className="mesure">3 à 4 jours</span> de chantier.

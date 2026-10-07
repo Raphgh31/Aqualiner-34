@@ -150,9 +150,9 @@ const BLANK = new Uint8Array([128, 128, 128, 255])
 
 export function createPoolSim(
   canvas: HTMLCanvasElement,
-  options: { finish: Finish; texture: FloorSource; reducedMotion: boolean },
+  options: { finish: Finish; texture: FloorSource; reducedMotion: boolean; onSlow?: () => void },
 ): PoolSim | null {
-  const gl = canvas.getContext('webgl', { antialias: false, alpha: false })
+  const gl = canvas.getContext('webgl', { antialias: false, alpha: false, failIfMajorPerformanceCaveat: true })
   if (!gl) return null
   const { uniform } = createProgram(gl, FRAGMENT)
 
@@ -191,6 +191,7 @@ export function createPoolSim(
     canvas,
     gl,
     reducedMotion: options.reducedMotion,
+    onSlow: options.onSlow,
     maxPixelRatio: 1.25,
     draw: (time, width, height) => {
       clock = time

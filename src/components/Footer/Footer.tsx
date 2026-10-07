@@ -2,14 +2,17 @@ import { Link } from 'react-router'
 import { company, zoneSentence } from '../../content/company'
 import { NAV } from '../../routes'
 import Plaque from '../Plaque/Plaque'
+import Floor from '../Floor/Floor'
 import Wordmark from '../Wordmark/Wordmark'
 import styles from './Footer.module.css'
 
+const year = new Date().getFullYear()
+
 /** Le pied de page est le fond du bassin : la dernière profondeur, là où l'on se parle. */
 export default function Footer() {
-  const year = new Date().getFullYear()
   return (
     <footer className={`${styles.pied} profond`} id="le-fond">
+      <Floor />
       <div className={styles.contenu}>
         <div className={styles.appel}>
           <p className={`titre-page ${styles.titre}`}>Parlons de votre bassin.</p>

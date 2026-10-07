@@ -2,7 +2,7 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background-color: #23353c;
+  background-color: var(--fond);
 }
 
 /* Même cadrage que le rendu WebGL : la croix reste à sa place pendant le zoom. */

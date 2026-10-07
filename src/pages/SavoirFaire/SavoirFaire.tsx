@@ -98,7 +98,7 @@ export default function SavoirFaire() {
             <h2 id="methode-titre" className="titre-section">
               La pose, en cinq étapes.
             </h2>
-            <p className="texte secondaire">Du diagnostic à la mise en eau, l’équipe mène chaque étape elle-même. Le remplacement d’une étanchéité prend 3 à 4 jours.</p>
+            <p className="texte secondaire">Du diagnostic à la mise en eau, cinq étapes ; le remplacement d’une étanchéité prend 3 à 4 jours.</p>
             <figure className={styles.avantApres}>
               <Img id="escalier-beton" sizes="(min-width: 1024px) 20vw, 50vw" intrinsic />
               <Img id="escalier-membrane" sizes="(min-width: 1024px) 20vw, 50vw" intrinsic />

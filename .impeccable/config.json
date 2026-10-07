@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "src/**/*.tsx"
+        ],
+        "createdAt": "2026-10-07T05:59:31.000Z",
+        "reason": "Le composant Img construit ses sources depuis le manifeste des médias (src/content/media.ts) ; images vérifiées dans le navigateur, toutes avec texte alternatif."
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "src/components/ZoneMap/ZoneMap.module.css"
+        ],
+        "createdAt": "2026-10-07T06:30:00.000Z",
+        "reason": "Tailles du texte de la carte en unités du dessin SVG (viewBox) : elles suivent l'échelle de la carte, documentées dans DESIGN.md (Typography)."
+      }
+    ]
+  }
+}

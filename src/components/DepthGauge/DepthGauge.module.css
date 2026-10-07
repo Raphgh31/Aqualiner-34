@@ -45,11 +45,11 @@
   left: 14px;
   top: -0.55em;
   font-style: normal;
-  font-size: 0.66rem;
+  font-size: var(--t-graduation);
   font-stretch: var(--etroite);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
-  opacity: 0.6;
+  opacity: 0.78;
 }
 
 .repere {
@@ -68,7 +68,7 @@
   padding: 0.12em 0.3em;
   background-color: var(--couleur-repere);
   color: var(--email);
-  font-size: 0.78rem;
+  font-size: var(--t-note);
   white-space: nowrap;
   transition: background-color 0.4s var(--ease);
 }

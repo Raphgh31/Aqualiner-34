@@ -29,7 +29,8 @@
   display: grid;
   grid-template-columns: auto 1fr;
   gap: var(--e-5);
-  opacity: 0.38;
+  /* Une étape pas encore atteinte reste lisible (4,9:1) ; c'est son numéro qui s'allume. */
+  opacity: 0.85;
   transition: opacity 0.6s var(--ease);
 }
 
@@ -57,8 +58,13 @@
 
 .numero {
   font-size: 2.4rem;
-  color: var(--marque);
+  color: var(--encre-2);
   min-width: 2.2ch;
+  transition: color 0.5s var(--ease);
+}
+
+.etape[data-atteinte] .numero {
+  color: var(--marque);
 }
 
 .titre {

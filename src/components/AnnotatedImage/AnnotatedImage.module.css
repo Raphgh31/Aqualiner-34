@@ -100,7 +100,7 @@
     display: block;
     color: #fff;
     font-style: normal;
-    font-size: 0.75rem;
+    font-size: var(--t-note);
     font-weight: 700;
   }
   .liste {

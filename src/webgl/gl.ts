@@ -1,5 +1,7 @@
 /** Petits outils WebGL 1 : programme plein cadre, textures, boucle de rendu économe. */
 
+import { nextScale } from './quality'
+
 export const VERTEX = /* glsl */ `
 attribute vec2 a_position;
 varying vec2 v_uv;
@@ -100,21 +102,33 @@ type LoopOptions = {
   reducedMotion: boolean
   maxPixelRatio?: number
   onContextLost?: () => void
+  /** L'appareil ne tient pas le rendu, même allégé : l'appelant passe aux images fixes. */
+  onSlow?: () => void
 }
+
+/** Durée ignorée au démarrage (textures, compilation), puis durée minimale de chaque mesure, en ms. */
+const WARMUP_MS = 400
+const SAMPLE_MS = 700
 
 /**
  * Boucle de rendu : seulement quand le canevas est visible et l'onglet actif,
  * une seule image si le mouvement est réduit, densité de pixels plafonnée.
+ * Si l'appareil peine (moins de 25 images par seconde), la définition baisse par paliers, puis l'eau se fige.
  */
-export function startLoop({ canvas, gl, draw, reducedMotion, maxPixelRatio = 1.5, onContextLost }: LoopOptions) {
+export function startLoop({ canvas, gl, draw, reducedMotion, maxPixelRatio = 1.5, onContextLost, onSlow }: LoopOptions) {
   let frame = 0
   let visible = false
   let running = false
   let lost = false
+  let frozen = false
+  let scale = 1
+  let previous = 0
+  let since = 0
+  let frames = 0
   const start = performance.now()
 
   const resize = () => {
-    const ratio = Math.min(window.devicePixelRatio || 1, maxPixelRatio)
+    const ratio = Math.min(window.devicePixelRatio || 1, maxPixelRatio) * scale
     const width = Math.max(1, Math.round(canvas.clientWidth * ratio))
     const height = Math.max(1, Math.round(canvas.clientHeight * ratio))
     if (canvas.width !== width || canvas.height !== height) {
@@ -130,14 +144,44 @@ export function startLoop({ canvas, gl, draw, reducedMotion, maxPixelRatio = 1.5
     draw(reducedMotion ? 0 : (performance.now() - start) / 1000, canvas.width, canvas.height)
   }
 
-  const tick = () => {
+  // Mesure par fenêtres de temps : un appareil très lent est repéré en moins d'une seconde.
+  const measure = (now: number) => {
+    if (!previous) {
+      previous = now
+      since = now + WARMUP_MS
+      frames = 0
+      return
+    }
+    previous = now
+    if (now < since) return
+    frames++
+    const elapsed = now - since
+    if (elapsed >= SAMPLE_MS && frames >= 3) {
+      const next = nextScale(elapsed / frames, scale)
+      if (next === null) {
+        frozen = true
+        onSlow?.()
+      } else scale = next
+      since = now
+      frames = 0
+    }
+  }
+
+  const tick = (now: number) => {
+    measure(now)
     renderOnce()
+    if (frozen) {
+      running = false
+      return
+    }
     frame = requestAnimationFrame(tick)
   }
 
   const update = () => {
-    const shouldRun = visible && !document.hidden && !reducedMotion && !lost
+    const shouldRun = visible && !document.hidden && !reducedMotion && !lost && !frozen
     if (shouldRun && !running) {
+      // Une reprise (onglet revenu, canevas revu) ne compte pas l'attente comme une image lente.
+      previous = 0
       running = true
       frame = requestAnimationFrame(tick)
     } else if (!shouldRun && running) {

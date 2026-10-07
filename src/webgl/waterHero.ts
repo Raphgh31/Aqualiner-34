@@ -71,12 +71,13 @@ export type WaterHeroOptions = {
   focus: [[number, number], [number, number]]
   reducedMotion: boolean
   onContextLost?: () => void
+  onSlow?: () => void
 }
 
 export type WaterHero = { setProgress: (progress: number) => void; destroy: () => void }
 
 export function createWaterHero(canvas: HTMLCanvasElement, options: WaterHeroOptions): WaterHero | null {
-  const gl = canvas.getContext('webgl', { antialias: false, alpha: false, preserveDrawingBuffer: false })
+  const gl = canvas.getContext('webgl', { antialias: false, alpha: false, preserveDrawingBuffer: false, failIfMajorPerformanceCaveat: true })
   if (!gl) return null
   const { uniform } = createProgram(gl, FRAGMENT)
   const textures = [...options.images, ...options.masks].map((image) => createTexture(gl, image))
@@ -98,6 +99,7 @@ export function createWaterHero(canvas: HTMLCanvasElement, options: WaterHeroOpt
     gl,
     reducedMotion: options.reducedMotion,
     onContextLost: options.onContextLost,
+    onSlow: options.onSlow,
     draw: (time, width, height) => {
       gl.uniform2f(uniform('u_resolution'), width, height)
       gl.uniform1f(uniform('u_time'), time)

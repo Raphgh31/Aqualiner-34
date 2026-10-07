@@ -32,12 +32,14 @@ export default function WaterHero({ progress }: WaterHeroProps) {
   const canvas = useRef<HTMLCanvasElement>(null)
   const renderer = useRef<Renderer | null>(null)
   const [ready, setReady] = useState(false)
+  // L'appareil ne tient pas l'eau animée : la photo et son zoom en CSS prennent le relais.
+  const [slow, setSlow] = useState(false)
   const [fallbackZoom, setFallbackZoom] = useState(1)
 
   useEffect(() => {
     const img = image.current
     const target = canvas.current
-    if (!img || !target || !canUseWebGL()) return
+    if (!img || !target || slow || !canUseWebGL()) return
     let cancelled = false
     let created: Renderer | null = null
 
@@ -63,6 +65,7 @@ export default function WaterHero({ progress }: WaterHeroProps) {
         focus: [portrait ? FOCUS_CROSS_PORTRAIT : FOCUS_CROSS, FOCUS_STEPS],
         reducedMotion: reduced,
         onContextLost: () => setReady(false),
+        onSlow: () => setSlow(true),
       })
       if (!created) return
       renderer.current = created
@@ -77,7 +80,7 @@ export default function WaterHero({ progress }: WaterHeroProps) {
       renderer.current = null
       setReady(false)
     }
-  }, [reduced, progress])
+  }, [reduced, progress, slow])
 
   useMotionValueEvent(progress, 'change', (value) => {
     if (reduced) return

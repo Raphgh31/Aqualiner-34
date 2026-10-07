@@ -30,6 +30,17 @@ Spec : `docs/superpowers/specs/2026-10-06-refonte-aqualiner34-design.md` (sectio
 - Interdits : surtitres au-dessus des titres, capitales décoratives, numérotation hors vraies séquences, ombres, dégradés décoratifs, verre dépoli, émojis, cartes arrondies, mise en page entièrement centrée.
 - Mouvement : un moment orchestré par page, le reste répond aux gestes du visiteur. Pas d'`initial={false}` sur l'`AnimatePresence` des pages ; un élément avec son propre `whileHover` n'hérite plus des variantes du parent.
 
+## Pièges connus
+
+- Sous `<Routes location>`, React Router annonce `POP` à la page entrante : la page lit le vrai type de navigation dans `ArrivalContext` (`src/lib/arrival.ts`), fourni par `App` avec une clé par page.
+- « Projet suivant » : le rideau de sortie est remplacé par l'agrandissement de la photo (`custom` de l'`AnimatePresence` = `'projet'`), et la position de défilement est restaurée au retour (`src/lib/scrollMemory.ts`).
+- WebGL : contexte demandé avec `failIfMajorPerformanceCaveat` ; `src/webgl/quality.ts` baisse la résolution puis fige l'effet (image fixe) si les images dépassent 40 ms. Sous Chromium sans GPU (SwiftShader), un calque opaque au-dessus du canvas laisse une image fantôme : les panneaux du hero sont à 0,97 d'opacité.
+- Archivo n'a pas d'italique : `cite` et `em` restent romains (`src/styles/base.css`).
+- Partage : `VITE_SITE_URL` (`.env`) remplit `og:url` et `og:image` ; `VITE_NOINDEX=false` retire le `noindex` pour la mise en production.
+- Détecteur impeccable : la règle `broken-image` est ignorée pour `src/**/*.tsx` (`Img` construit `src` depuis le manifeste) ; voir `.impeccable/config.json`.
+- Tests navigateur : une navigation vers la même URL avec seulement le hash changé ne recharge pas la page ; ajouter un paramètre anti-cache.
+- Système de design : `DESIGN.md` et `.impeccable/design.json` décrivent les jetons et composants ; les mettre à jour avec `tokens.css`.
+
 ## Avant de pousser
 
 1. `npm test` et `npm run build` sans erreur.

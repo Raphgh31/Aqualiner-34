@@ -72,7 +72,7 @@
 }
 
 .valeur {
-  font-size: clamp(1.6rem, 1.3rem + 1vw, 2.3rem);
+  font-size: var(--t-valeur);
 }
 
 .traitements {

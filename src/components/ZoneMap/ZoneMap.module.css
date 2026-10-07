@@ -10,7 +10,7 @@
 }
 
 .mer {
-  fill: rgb(92 201 198 / 0.12);
+  fill: color-mix(in srgb, var(--eau) 12%, transparent);
 }
 
 .cote {
@@ -20,7 +20,7 @@
 }
 
 .merNom {
-  fill: #2f8f8c;
+  fill: var(--eau-encre);
   font-size: 14px;
   letter-spacing: 0.02em;
 }

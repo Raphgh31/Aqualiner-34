@@ -50,7 +50,17 @@ export default function Nuancier() {
     let cancelled = false
     floorTexture(DEFAULT).then((texture) => {
       if (cancelled) return
-      sim.current = createPoolSim(target, { finish: DEFAULT, texture, reducedMotion: reduced })
+      sim.current = createPoolSim(target, {
+        finish: DEFAULT,
+        texture,
+        reducedMotion: reduced,
+        // L'appareil ne tient pas le rendu : teinte fixe, et le canevas est libéré.
+        onSlow: () => {
+          sim.current?.destroy()
+          sim.current = null
+          setWebgl(false)
+        },
+      })
       if (!sim.current) setWebgl(false)
     })
     return () => {

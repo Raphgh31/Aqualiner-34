@@ -37,7 +37,7 @@
 }
 
 .telephone {
-  font-size: clamp(2.2rem, 1.6rem + 2vw, 3.4rem);
+  font-size: var(--t-grand);
   color: var(--encre);
   text-decoration: none;
 }
@@ -84,7 +84,7 @@
 }
 
 .plan a {
-  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
+  font-size: var(--t-chapo);
   font-stretch: 112%;
   font-weight: 500;
   color: var(--encre);

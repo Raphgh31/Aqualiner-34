@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T06:15:36.422Z",
+  "title": "Design System: Aqualiner 34",
+  "extensions": {
+    "colorMeta": {
+      "email": {
+        "role": "neutral",
+        "displayName": "Émail",
+        "canonical": "#eff2f1",
+        "oklch": "oklch(95.9% 0.003 174.5)",
+        "tonalRamp": [
+          "#0a0c0b",
+          "#222524",
+          "#3e403f",
+          "#5c5e5d",
+          "#7e8180",
+          "#a2a5a4",
+          "#c8cbca",
+          "#ecefee"
+        ]
+      },
+      "email-ombre": {
+        "role": "neutral",
+        "displayName": "Émail à l'ombre",
+        "canonical": "#e3e8e7",
+        "oklch": "oklch(92.7% 0.006 183.0)",
+        "tonalRamp": [
+          "#090c0b",
+          "#212524",
+          "#3d4140",
+          "#5a5f5e",
+          "#7d8180",
+          "#a1a6a5",
+          "#c7cccb",
+          "#ebf0ef"
+        ]
+      },
+      "ardoise": {
+        "role": "neutral",
+        "displayName": "Ardoise de membrane",
+        "canonical": "#232a30",
+        "oklch": "oklch(28.1% 0.015 244.2)",
+        "tonalRamp": [
+          "#060c11",
+          "#1e252b",
+          "#394147",
+          "#575f66",
+          "#798189",
+          "#9da6ad",
+          "#c3ccd4",
+          "#e6f0f8"
+        ]
+      },
+      "fond": {
+        "role": "neutral",
+        "displayName": "Membrane sous l'eau",
+        "canonical": "#13303d",
+        "oklch": "oklch(29.3% 0.042 229.8)",
+        "tonalRamp": [
+          "#000e19",
+          "#0a2834",
+          "#274452",
+          "#456271",
+          "#678595",
+          "#8aaaba",
+          "#b0d0e1",
+          "#d3f5ff"
+        ]
+      },
+      "gris": {
+        "role": "neutral",
+        "displayName": "Gris galet",
+        "canonical": "#5a6369",
+        "oklch": "oklch(49.4% 0.015 236.9)",
+        "tonalRamp": [
+          "#060c11",
+          "#1d252a",
+          "#394147",
+          "#565f65",
+          "#788288",
+          "#9ca6ad",
+          "#c2ccd3",
+          "#e6f0f7"
+        ]
+      },
+      "gris-fond": {
+        "role": "neutral",
+        "displayName": "Gris d'eau",
+        "canonical": "#9fb0b6",
+        "oklch": "oklch(74.6% 0.021 220.9)",
+        "tonalRamp": [
+          "#020d11",
+          "#19262b",
+          "#344248",
+          "#516166",
+          "#738389",
+          "#97a8ae",
+          "#bdced4",
+          "#e0f2f8"
+        ]
+      },
+      "rouge": {
+        "role": "primary",
+        "displayName": "Rouge de marquage",
+        "canonical": "#c42b2e",
+        "oklch": "oklch(53.8% 0.189 25.5)",
+        "tonalRamp": [
+          "#300000",
+          "#540000",
+          "#781115",
+          "#9d3532",
+          "#c65a54",
+          "#ee8078",
+          "#ffa79d",
+          "#ffcbc1"
+        ]
+      },
+      "rouge-clair": {
+        "role": "primary",
+        "displayName": "Rouge clair du logo",
+        "canonical": "#f56b6e",
+        "oklch": "oklch(69.8% 0.170 21.2)",
+        "tonalRamp": [
+          "#300000",
+          "#530002",
+          "#780f1d",
+          "#9d343a",
+          "#c5595b",
+          "#ee7f7f",
+          "#ffa6a4",
+          "#ffcac8"
+        ]
+      },
+      "rouge-survol": {
+        "role": "primary",
+        "displayName": "Rouge de survol",
+        "canonical": "#a92225",
+        "oklch": "oklch(48.0% 0.171 25.6)",
+        "tonalRamp": [
+          "#300000",
+          "#540000",
+          "#781115",
+          "#9d3532",
+          "#c65a54",
+          "#ee8077",
+          "#ffa79d",
+          "#ffcbc1"
+        ]
+      },
+      "blanc": {
+        "role": "neutral",
+        "displayName": "Blanc",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#242424",
+          "#404040",
+          "#5d5d5d",
+          "#808080",
+          "#a4a4a4",
+          "#cacaca",
+          "#eeeeee"
+        ]
+      },
+      "eau": {
+        "role": "secondary",
+        "displayName": "Turquoise d'eau",
+        "canonical": "#5cc9c6",
+        "oklch": "oklch(77.2% 0.100 192.8)",
+        "tonalRamp": [
+          "#001516",
+          "#003131",
+          "#004f4e",
+          "#006e6d",
+          "#119390",
+          "#49b8b6",
+          "#74dfdc",
+          "#99ffff"
+        ]
+      },
+      "eau-encre": {
+        "role": "secondary",
+        "displayName": "Turquoise lisible",
+        "canonical": "#047270",
+        "oklch": "oklch(50.0% 0.085 192.6)",
+        "tonalRamp": [
+          "#001415",
+          "#002f2f",
+          "#004d4c",
+          "#006c6a",
+          "#35908e",
+          "#5eb6b3",
+          "#85dcd9",
+          "#a9fffe"
+        ]
+      },
+      "voile": {
+        "role": "neutral",
+        "displayName": "Voile",
+        "canonical": "#0c212b",
+        "oklch": "oklch(23.6% 0.033 231.1)",
+        "tonalRamp": [
+          "#000d16",
+          "#122731",
+          "#2e434e",
+          "#4b616d",
+          "#6d8491",
+          "#90a9b6",
+          "#b6cfdc",
+          "#d9f3ff"
+        ]
+      },
+      "joint": {
+        "role": "neutral",
+        "displayName": "Joint",
+        "canonical": "#c9d1d0",
+        "oklch": "oklch(85.4% 0.009 188.1)",
+        "tonalRamp": [
+          "#070c0c",
+          "#1f2525",
+          "#3b4140",
+          "#585f5e",
+          "#7b8281",
+          "#9fa6a5",
+          "#c4cccb",
+          "#e8f0ef"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Titre de hero",
+        "purpose": "Ouverture de l'accueil et des fiches projets, Archivo étendue."
+      },
+      "headline": {
+        "displayName": "Titre de page",
+        "purpose": "Un par page, Archivo étendue."
+      },
+      "title": {
+        "displayName": "Titre de section",
+        "purpose": "Phrases terminées par un point."
+      },
+      "subtitle": {
+        "displayName": "Sous-titre",
+        "purpose": "Étapes, services, questions, noms."
+      },
+      "lead": {
+        "displayName": "Chapeau",
+        "purpose": "Introductions, 38 caractères max."
+      },
+      "body": {
+        "displayName": "Texte",
+        "purpose": "Texte courant, mesure 64 caractères."
+      },
+      "callout": {
+        "displayName": "Appel",
+        "purpose": "Numéros de téléphone (condensée), noms de l’index des réalisations sur ordinateur."
+      },
+      "menu": {
+        "displayName": "Menu",
+        "purpose": "Liens du menu plein écran sur mobile, proportionnels à la largeur de l’écran."
+      },
+      "value": {
+        "displayName": "Valeur",
+        "purpose": "Valeurs mises en avant d’une fiche, en condensée."
+      },
+      "control": {
+        "displayName": "Commande",
+        "purpose": "Libellés des plaques et liens de la navigation."
+      },
+      "label": {
+        "displayName": "Légende",
+        "purpose": "Légendes, libellés de fiches, notes, petites plaques."
+      },
+      "note": {
+        "displayName": "Note",
+        "purpose": "Repère de la jauge, annotations des photographies, étiquette du curseur."
+      },
+      "scale": {
+        "displayName": "Graduation",
+        "purpose": "Graduations de la jauge, décoratives."
+      },
+      "measure": {
+        "displayName": "Cote",
+        "purpose": "Profondeurs, cotes, numéros, années : Archivo condensée, chiffres tabulaires."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Sorties franches et amorties : apparitions, survols, cordon de soudure."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "Rideau des transitions de page et agrandissement « Projet suivant »."
+      },
+      {
+        "name": "duree-survol",
+        "value": "0.35s–0.45s",
+        "purpose": "Niveau qui monte dans une plaque, traits qui se dessinent."
+      },
+      {
+        "name": "duree-page",
+        "value": "0.7s",
+        "purpose": "Rideau complet (0,28 s montée + 0,42 s retrait)."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "telephone",
+        "value": "640px"
+      },
+      {
+        "name": "ordinateur",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Plaque rouge",
+      "kind": "button",
+      "refersTo": "plaque-rouge",
+      "description": "Action principale d'une zone ; le survol fait monter un niveau plus sombre.",
+      "html": "<a class=\"ds-plaque\" href=\"#\">Rénover mon bassin <svg width=\"18\" height=\"12\" viewBox=\"0 0 18 12\" aria-hidden=\"true\"><path d=\"M0 6h16M11 1l5 5-5 5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></a>",
+      "css": ".ds-plaque{position:relative;display:inline-flex;align-items:center;gap:.9em;min-height:52px;padding:.85em 1.35em .9em;border-radius:2px;background:#c42b2e;color:#fff;font:600 1rem/1.1 Archivo,system-ui,sans-serif;font-stretch:112%;text-decoration:none;overflow:hidden;isolation:isolate}.ds-plaque::before{content:\"\";position:absolute;inset:0;z-index:-1;background:#a92225;transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.22,1,.36,1)}.ds-plaque:hover::before,.ds-plaque:focus-visible::before{transform:scaleY(1)}.ds-plaque:focus-visible{outline:2px solid #c42b2e;outline-offset:3px}.ds-plaque svg{transition:transform .45s cubic-bezier(.22,1,.36,1)}.ds-plaque:hover svg{transform:translateX(4px)}"
+    },
+    {
+      "name": "Plaque émail",
+      "kind": "button",
+      "refersTo": "plaque-email",
+      "description": "Action secondaire posée sur une photographie ou un fond profond.",
+      "html": "<a class=\"ds-plaque-email\" href=\"#\">Construire</a>",
+      "css": ".ds-plaque-email{position:relative;display:inline-flex;align-items:center;min-height:52px;padding:.85em 1.35em .9em;border-radius:2px;background:#eff2f1;color:#232a30;font:600 1rem/1.1 Archivo,system-ui,sans-serif;font-stretch:112%;text-decoration:none;overflow:hidden;isolation:isolate}.ds-plaque-email::before{content:\"\";position:absolute;inset:0;z-index:-1;background:#fff;transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.22,1,.36,1)}.ds-plaque-email:hover::before{transform:scaleY(1)}.ds-plaque-email:focus-visible{outline:2px solid #c42b2e;outline-offset:3px}"
+    },
+    {
+      "name": "Champ de formulaire",
+      "kind": "input",
+      "refersTo": "champ",
+      "description": "Champ à angles vifs, trait ardoise en pied ; rouge au focus et en erreur.",
+      "html": "<label class=\"ds-champ\"><span>Commune du bassin *</span><input type=\"text\" placeholder=\"Pézenas\"></label>",
+      "css": ".ds-champ{display:grid;gap:.5rem;font:400 1rem/1.5 Archivo,system-ui,sans-serif;color:#232a30}.ds-champ span{font-weight:600}.ds-champ input{min-height:48px;padding:.7rem .85rem;border:1px solid #c9d1d0;border-bottom:2px solid #232a30;border-radius:0;background:#fff;color:#232a30;font:inherit}.ds-champ input:focus-visible{outline:2px solid #c42b2e;outline-offset:2px}"
+    },
+    {
+      "name": "Choix en plaque",
+      "kind": "chip",
+      "refersTo": "choix-plaque",
+      "description": "Bouton radio en plaque : contour ardoise, aplat ardoise une fois choisi.",
+      "html": "<div class=\"ds-choix\"><label data-actif><input type=\"radio\" name=\"p\" checked>Rénovation</label><label><input type=\"radio\" name=\"p\">Construction</label></div>",
+      "css": ".ds-choix{display:flex;flex-wrap:wrap;gap:.5rem;font:600 1rem/1.2 Archivo,system-ui,sans-serif}.ds-choix label{display:inline-flex;align-items:center;min-height:48px;padding:.55rem .95rem;border:1px solid #232a30;color:#232a30;cursor:pointer;transition:background-color .25s,color .25s}.ds-choix label:hover{background:#e3e8e7}.ds-choix label[data-actif]{background:#232a30;color:#eff2f1}.ds-choix input{position:absolute;opacity:0;width:1px;height:1px}.ds-choix label:has(input:focus-visible){outline:2px solid #c42b2e;outline-offset:3px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Logotype, cinq liens, lien actif souligné de rouge.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\">aqualiner<b>34</b></a><a href=\"#\" aria-current=\"page\">Réalisations</a><a href=\"#\">Savoir-faire</a><a href=\"#\">Services</a><a href=\"#\">L’atelier</a><a href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:1.75rem;padding:1rem 0;background:#eff2f1;font:500 .98rem/1 Archivo,system-ui,sans-serif;color:#232a30}.ds-nav a{position:relative;color:inherit;text-decoration:none;padding:.4rem 0}.ds-nav a::after{content:\"\";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:#232a30;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)}.ds-nav a:hover::after{transform:scaleX(1)}.ds-nav a[aria-current=\"page\"]::after{transform:scaleX(1);background:#c42b2e}.ds-logo{font-size:1.3rem;font-weight:620;font-stretch:125%;letter-spacing:-.035em;margin-right:1rem}.ds-logo b{font-stretch:66%;font-weight:700;color:#c42b2e;margin-left:.12em}"
+    },
+    {
+      "name": "Repère de jauge",
+      "kind": "custom",
+      "refersTo": "repere-jauge",
+      "description": "La profondeur atteinte, en chiffres condensés : rouge en surface, turquoise en profondeur.",
+      "html": "<div class=\"ds-jauge\"><span class=\"ds-repere\">0,45 m</span><span class=\"ds-repere ds-profond\">1,62 m</span></div>",
+      "css": ".ds-jauge{display:flex;gap:1rem;padding:1rem;background:linear-gradient(90deg,#eff2f1 50%,#13303d 50%)}.ds-repere{display:inline-block;padding:.15em .35em;background:#c42b2e;color:#fff;font:650 .8rem/1 Archivo,system-ui,sans-serif;font-stretch:66%;font-variant-numeric:tabular-nums}.ds-profond{background:#5cc9c6;color:#13303d}"
+    },
+    {
+      "name": "Fiche technique",
+      "kind": "custom",
+      "refersTo": "fiche",
+      "description": "Libellé à gauche, valeur à droite ; « À préciser » en gris pour toute information non fournie.",
+      "html": "<dl class=\"ds-fiche\"><div><dt>Finition</dt><dd>Membrane armée anthracite</dd></div><div><dt>Commune</dt><dd data-inconnu>À préciser</dd></div></dl>",
+      "css": ".ds-fiche{margin:0;border-top:2px solid #232a30;font:400 1rem/1.4 Archivo,system-ui,sans-serif;color:#232a30}.ds-fiche div{display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid #c9d1d0}.ds-fiche dt{font-size:.9rem;color:#5a6369}.ds-fiche dd{margin:0;font-weight:500}.ds-fiche dd[data-inconnu]{color:#5a6369;font-weight:400}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La signalétique de bassin",
+    "overview": "Le site emprunte le langage graphique d'une piscine : marquages de profondeur, ligne d'eau, carreaux émaillés, membrane anthracite, cordons de soudure. On descend de la surface (0,00 m) jusqu'au fond (2,20 m), là où l'entreprise travaille : chaque page se lit comme une plongée, les sections claires sont la surface, les sections sombres sont l'eau profonde, et le pied de page est le fond, où la lumière joue encore un peu.\n\nLes photographies des vrais chantiers portent le récit ; l'interface reste en retrait, plate, à angles vifs, sans ombre. La personnalité vient de la typographie (une seule famille en trois largeurs), d'instruments de mesure honnêtes (jauge, cotes, fiches techniques) et d'une eau rendue en WebGL là où il y a vraiment de l'eau. Le mouvement est rare et lié au geste ou à la plongée : un moment orchestré par page, le reste répond au visiteur.",
+    "keyCharacteristics": [
+      "Émail froid et ardoise de membrane ; rouge de marquage près de la surface, turquoise d’eau en profondeur.",
+      "Archivo seule, en trois largeurs : étendue pour les titres, condensée pour les chiffres, normale pour le texte.",
+      "Jauge de profondeur fixe à gauche, du 0,00 m au 2,20 m du pied de page.",
+      "Séparations en lignes de soudure (double trait fin), jamais d’ombre.",
+      "Photographies annotées par des lignes de rappel ; dates de prise de vue réelles."
+    ],
+    "rules": [
+      {
+        "name": "The Red Drowns Rule",
+        "body": "Sous l’eau, le rouge disparaît le premier : sur une section profonde, chaque marquage passe au turquoise, et le seul rouge admis est le rouge clair du logo.",
+        "section": "colors"
+      },
+      {
+        "name": "The Water Is Water Rule",
+        "body": "Le turquoise n’apparaît que là où il y a de l’eau (rendu WebGL, carte, marquages profonds), jamais comme accent décoratif.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Titres en casse de phrase, terminés par un point quand ils forment une phrase ; aucune capitale décorative, aucun surtitre au-dessus d’un titre.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Fake Italic Rule",
+        "body": "La police n’a pas d’italique : cite et em restent romains, jamais d’oblique simulé.",
+        "section": "typography"
+      },
+      {
+        "name": "The Seams Not Shadows Rule",
+        "body": "Toute séparation est une ligne de soudure : double trait fin (3 px, double, couleur joint) entre éléments d’une liste, trait plein de 2 px ardoise en tête d’une fiche technique.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Depth Is Content Rule",
+        "body": "Une section sombre signifie « plus profond », jamais « mise en avant » : on ne fonce pas un fond pour attirer l’œil.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do passer chaque marquage au turquoise sur une section profonde, et garder le rouge pour la surface.",
+      "Do séparer les éléments d'une liste par une ligne de soudure (double trait fin), jamais par une ombre ou une carte.",
+      "Do afficher « À préciser » pour toute information que l'entreprise n'a pas fournie, plutôt que de l'inventer.",
+      "Do montrer les vraies photographies datées des chantiers, à leurs proportions, et les annoter quand une partie du bassin mérite d'être nommée.",
+      "Do composer en asymétrie sur 12 colonnes, texte à gauche, et laisser la jauge libre dans la marge gauche sur ordinateur.",
+      "Do garder un seul moment orchestré par page ; le reste du mouvement répond au geste du visiteur et respecte « réduire les animations »."
+    ],
+    "donts": [
+      "Don't utiliser de dégradés violets, de verre dépoli, d'émojis en guise d'icônes, de coins arrondis ou d'ombres.",
+      "Don't poser de surtitre au-dessus d'un titre, ni numéroter ce qui n'est pas une vraie séquence (étapes de pose, chronologie).",
+      "Don't centrer une section entière.",
+      "Don't utiliser le turquoise comme simple accent sur l'émail, ni le rouge du marquage sur un fond profond.",
+      "Don't simuler un italique, une police à chasse fixe ou une matière (relief CSS, texture imitée).",
+      "Don't afficher une image de banque ni la réalisation d'une autre entreprise."
+    ]
+  }
+}

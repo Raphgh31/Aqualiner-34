@@ -21,3 +21,10 @@ test("une exception à la création du contexte ne casse pas la page", () => {
   })
   expect(canUseWebGL()).toBe(false)
 })
+
+test('un WebGL rendu par le processeur (performances dégradées) se replie aussi sur les images', () => {
+  const fake = { getExtension: () => null } as unknown as WebGLRenderingContext
+  vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockImplementation(((_type: string, options?: WebGLContextAttributes) =>
+    options?.failIfMajorPerformanceCaveat ? null : fake) as never)
+  expect(canUseWebGL()).toBe(false)
+})

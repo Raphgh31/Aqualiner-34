@@ -1,0 +1,19 @@
+.fond {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease);
+  pointer-events: none;
+}
+
+.fond[data-pret] {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fond {
+    transition: none;
+  }
+}

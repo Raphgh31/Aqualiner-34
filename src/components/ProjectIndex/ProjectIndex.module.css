@@ -87,7 +87,7 @@
   }
   .titre {
     align-self: baseline;
-    font-size: clamp(2rem, 1.2rem + 2.4vw, 3.6rem);
+    font-size: var(--t-grand);
     line-height: 1;
   }
   .date {
